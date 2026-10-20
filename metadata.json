@@ -1,0 +1,6 @@
+{
+  "name": "Powers Petals | Luxury Bespoke Floral Design",
+  "description": "Bespoke floral design for weddings, sympathy tributes, and luxury events across West London by Power's Petals.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
