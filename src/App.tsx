@@ -3,49 +3,81 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from 'react';
-import { Navbar } from './components/Navbar';
+import React, { useState, useEffect } from 'react';
+import { Navbar, PageId } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { OriginalShowcase } from './components/OriginalShowcase';
 import { ServicesSection } from './components/ServicesSection';
-import { BespokeEstimator } from './components/BespokeEstimator';
-import { PortfolioGallery } from './components/PortfolioGallery';
 import { AboutAndVan } from './components/AboutAndVan';
 import { DeliveryChecker } from './components/DeliveryChecker';
-import { SeasonalCalendar } from './components/SeasonalCalendar';
-import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { ClientLogonModal } from './components/ClientLogonModal';
+import { SeasonalBloomsPage } from './pages/SeasonalBloomsPage';
+import { ConnectStudioPage } from './pages/ConnectStudioPage';
+import { DesignVisionPage } from './pages/DesignVisionPage';
 
 export default function App() {
+  const [currentPage, setCurrentPage] = useState<PageId>('home');
   const [isLogonOpen, setIsLogonOpen] = useState(false);
   const [selectedDesign, setSelectedDesign] = useState<string>('');
   const [inquiryNotification, setInquiryNotification] = useState<string | null>(null);
 
-  const handleOpenConsultation = () => {
-    const contactElem = document.getElementById('contact');
-    if (contactElem) {
-      contactElem.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  // Synchronize routing with browser URL hash
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.toLowerCase();
+      if (hash.includes('seasonal-blooms') || hash.includes('seasonal')) {
+        setCurrentPage('seasonal-blooms');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (hash.includes('connect-studio') || hash.includes('contact')) {
+        setCurrentPage('connect-studio');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (hash.includes('design-vision') || hash.includes('estimator')) {
+        setCurrentPage('design-vision');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        setCurrentPage('home');
+        // Handle home anchor jumps (e.g. #about, #services, #delivery)
+        const match = hash.match(/^#\/?([a-z0-9_-]+)/);
+        if (match && !['services', 'seasonal-blooms', 'connect-studio', 'design-vision'].includes(match[1])) {
+          setTimeout(() => {
+            const el = document.getElementById(match[1]);
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+          }, 150);
+        }
+      }
+    };
 
-  const handleExplorePortfolio = () => {
-    const portfolioElem = document.getElementById('portfolio');
-    if (portfolioElem) {
-      portfolioElem.scrollIntoView({ behavior: 'smooth' });
+    handleHashChange();
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  const handleNavigate = (page: PageId, anchor?: string) => {
+    setCurrentPage(page);
+    if (page === 'home') {
+      if (anchor) {
+        window.location.hash = `#${anchor}`;
+        setTimeout(() => {
+          const el = document.getElementById(anchor);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      } else {
+        window.location.hash = '';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    } else {
+      window.location.hash = `#/services/${page}`;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
   const handleSelectDesign = (designTitle: string) => {
     setSelectedDesign(designTitle);
-    const estimatorElem = document.getElementById('estimator');
-    if (estimatorElem) {
-      estimatorElem.scrollIntoView({ behavior: 'smooth' });
-    }
+    handleNavigate('design-vision');
   };
 
   const handleSubmitInquiry = (details: any) => {
-    setInquiryNotification(`Inquiry created for ${details.occasion}. Our florists will reach out to ${details.email || details.name}!`);
+    setInquiryNotification(`Inquiry created for ${details.occasion}. Our Chiswick florists will reach out to ${details.email || details.name || 'you'}!`);
     setTimeout(() => {
       setInquiryNotification(null);
     }, 6000);
@@ -55,73 +87,77 @@ export default function App() {
     <div className="min-h-screen bg-[#faf9f5] text-[#1b2330] flex flex-col font-sans selection:bg-[#c8a45d]/20 selection:text-[#01115b]">
       {/* Top Notification Toast */}
       {inquiryNotification && (
-        <div className="fixed top-20 right-4 z-50 bg-[#01115b] text-white px-5 py-3 rounded-xl border border-[#c8a45d] shadow-2xl flex items-center gap-3 animate-in fade-in slide-in-from-top-4 duration-300">
+        <div className="fixed top-24 right-4 z-50 bg-[#01115b] text-white px-5 py-3 rounded-xl border border-[#c8a45d] shadow-2xl flex items-center gap-3 animate-in fade-in slide-in-from-top-4 duration-300">
           <span className="text-[#c8a45d] text-lg">🌸</span>
           <span className="text-xs font-medium">{inquiryNotification}</span>
           <button 
             onClick={() => setInquiryNotification(null)}
-            className="text-slate-400 hover:text-white text-xs ml-2"
+            className="text-slate-400 hover:text-white text-xs ml-2 cursor-pointer"
           >
             ✕
           </button>
         </div>
       )}
 
-      {/* Navigation */}
+      {/* Navigation with Services menu heading and subpages */}
       <Navbar 
+        currentPage={currentPage}
+        onNavigate={handleNavigate}
         onOpenLogon={() => setIsLogonOpen(true)}
-        onOpenConsultation={handleOpenConsultation}
       />
 
-      {/* Main Content */}
+      {/* Main Content Area */}
       <main className="flex-1">
-        {/* Hero with Authentic Logo Banner & Royal Navy Backdrop */}
-        <Hero 
-          onOpenConsultation={handleOpenConsultation}
-          onExplorePortfolio={handleExplorePortfolio}
-          onOpenLogon={() => setIsLogonOpen(true)}
-        />
+        {currentPage === 'home' && (
+          <>
+            {/* Hero with Authentic Logo Banner & Royal Navy Backdrop */}
+            <Hero 
+              onOpenConsultation={() => handleNavigate('connect-studio')}
+              onExploreServices={() => handleNavigate('home', 'services')}
+              onOpenLogon={() => setIsLogonOpen(true)}
+            />
 
-        {/* Authentic Original Archive Showcase: Original Powers Petals Designs */}
-        <OriginalShowcase 
-          onSelectDesign={handleSelectDesign}
-        />
+            {/* 'A True Chiswick Original, Crafted with Heart & Stem' */}
+            <AboutAndVan 
+              onOpenConsultation={() => handleNavigate('connect-studio')}
+              onOpenDesignVision={() => handleNavigate('design-vision')}
+            />
 
-        {/* Bespoke Floristry Services (Weddings, Funerals, Events, Piaggio Van) */}
-        <ServicesSection 
-          onSelectService={(service) => handleSelectDesign(service)}
-        />
+            {/* Bespoke Services */}
+            <ServicesSection 
+              onSelectService={(service) => handleSelectDesign(service)}
+            />
 
-        {/* Interactive Bespoke Floral Customizer & Price Estimator */}
-        <BespokeEstimator 
-          initialDesign={selectedDesign}
-          onSubmitInquiry={handleSubmitInquiry}
-        />
+            {/* Interactive UK Postcode Delivery Checker (West London W4, W5, W6, W12) */}
+            <DeliveryChecker />
+          </>
+        )}
 
-        {/* Curated Portfolio Gallery with Category Tabs & Zoom Lightbox */}
-        <PortfolioGallery 
-          onSelectDesign={handleSelectDesign}
-        />
+        {currentPage === 'design-vision' && (
+          <DesignVisionPage 
+            initialDesign={selectedDesign}
+            onNavigate={handleNavigate}
+            onSubmitInquiry={handleSubmitInquiry}
+          />
+        )}
 
-        {/* The Story & The Iconic Piaggio 3-Wheeler Van */}
-        <AboutAndVan 
-          onOpenConsultation={handleOpenConsultation}
-        />
+        {currentPage === 'seasonal-blooms' && (
+          <SeasonalBloomsPage 
+            onNavigate={handleNavigate}
+          />
+        )}
 
-        {/* Interactive UK Postcode Delivery Checker (West London W4, W5, W6, W12) */}
-        <DeliveryChecker />
-
-        {/* Seasonal Bloom Calendar & Florist Conditioning Secrets */}
-        <SeasonalCalendar />
-
-        {/* Studio Contact & Direct Consultation Form */}
-        <ContactSection />
+        {currentPage === 'connect-studio' && (
+          <ConnectStudioPage 
+            onNavigate={handleNavigate}
+          />
+        )}
       </main>
 
-      {/* Luxury Footer with Heritage & Copyright */}
+      {/* Luxury Footer with Heritage, Copyright & Navigation */}
       <Footer 
         onOpenLogon={() => setIsLogonOpen(true)}
-        onOpenConsultation={handleOpenConsultation}
+        onNavigate={handleNavigate}
       />
 
       {/* Client & Event Logon Portal Modal */}

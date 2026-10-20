@@ -1,13 +1,20 @@
-import React, { useState, useMemo } from 'react';
-import { Sparkles, Calculator, Check, ArrowRight, Phone, Send, Info, Calendar } from 'lucide-react';
+import React, { useState, useMemo, useEffect } from 'react';
+import { Sparkles, Calculator, Check, ArrowRight, Phone, Send, Info, Calendar, X } from 'lucide-react';
 import { BUSINESS_INFO } from '../data/floralData';
 
 interface BespokeEstimatorProps {
   initialDesign?: string;
   onSubmitInquiry: (details: any) => void;
+  isOpen?: boolean;
+  onClose?: () => void;
 }
 
-export const BespokeEstimator: React.FC<BespokeEstimatorProps> = ({ initialDesign, onSubmitInquiry }) => {
+export const BespokeEstimator: React.FC<BespokeEstimatorProps> = ({ 
+  initialDesign, 
+  onSubmitInquiry,
+  isOpen,
+  onClose 
+}) => {
   const [occasion, setOccasion] = useState<'wedding' | 'sympathy' | 'event' | 'bouquet'>('wedding');
   const [palette, setPalette] = useState<string>('english-garden');
   const [selectedItems, setSelectedItems] = useState<string[]>(['bridal-bouquet', 'table-runners']);
@@ -21,6 +28,22 @@ export const BespokeEstimator: React.FC<BespokeEstimatorProps> = ({ initialDesig
   const [eventDate, setEventDate] = useState('');
   const [notes, setNotes] = useState(initialDesign ? `Inquiring about ${initialDesign}` : '');
   const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    if (initialDesign) {
+      setNotes(`Inquiring about ${initialDesign}`);
+      const lower = initialDesign.toLowerCase();
+      if (lower.includes('wedding') || lower.includes('bridal')) {
+        setOccasion('wedding');
+      } else if (lower.includes('sympathy') || lower.includes('funeral') || lower.includes('memorial') || lower.includes('casket')) {
+        setOccasion('sympathy');
+      } else if (lower.includes('event') || lower.includes('dining') || lower.includes('urn') || lower.includes('gala')) {
+        setOccasion('event');
+      } else if (lower.includes('bouquet') || lower.includes('hand-tied')) {
+        setOccasion('bouquet');
+      }
+    }
+  }, [initialDesign]);
 
   // Available items per occasion
   const itemOptions: Record<string, { id: string; label: string; basePrice: number; description: string }[]> = {
@@ -100,11 +123,12 @@ export const BespokeEstimator: React.FC<BespokeEstimatorProps> = ({ initialDesig
     });
   };
 
-  return (
-    <section id="estimator" className="py-20 bg-white border-b border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8">
-        
-        {/* Header */}
+  if (isOpen !== undefined && !isOpen) return null;
+
+  const innerContent = (
+    <div className="max-w-7xl mx-auto">
+      {/* Header if not in modal */}
+      {isOpen === undefined && (
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#01115b] bg-[#c8a45d]/15 rounded-full mb-3">
             <Calculator className="w-3.5 h-3.5 text-[#c8a45d]" />
@@ -117,9 +141,10 @@ export const BespokeEstimator: React.FC<BespokeEstimatorProps> = ({ initialDesig
             Tailor your occasion, floral color palette, and arrangement elements. Get a transparent real-time estimate and book a direct design consultation with our Chiswick studio.
           </p>
         </div>
+      )}
 
-        {/* Builder Container */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      {/* Builder Container */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           
           {/* Controls Column (7 cols) */}
           <div className="lg:col-span-7 space-y-8">
@@ -442,6 +467,63 @@ export const BespokeEstimator: React.FC<BespokeEstimatorProps> = ({ initialDesig
 
         </div>
 
+      </div>
+  );
+
+  if (isOpen !== undefined) {
+    return (
+      <div 
+        onClick={onClose}
+        className="fixed inset-0 z-50 bg-[#000a2e]/85 backdrop-blur-md p-3 sm:p-6 flex items-center justify-center animate-in fade-in duration-200"
+      >
+        <div 
+          onClick={(e) => e.stopPropagation()}
+          className="w-full max-w-6xl max-h-[92vh] bg-[#fcfbf9] rounded-2xl sm:rounded-3xl shadow-2xl border border-[#c8a45d]/40 overflow-hidden relative flex flex-col animate-in zoom-in-95 duration-200"
+        >
+          {/* Modal Header */}
+          <div className="bg-[#01115b] px-6 py-4 text-white flex items-center justify-between border-b border-[#c8a45d]/30 flex-shrink-0">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-white/10 border border-[#c8a45d]/40 flex items-center justify-center text-[#c8a45d]">
+                <Sparkles className="w-5 h-5 text-[#c8a45d]" />
+              </div>
+              <div>
+                <div className="flex items-center gap-2">
+                  <h3 className="font-serif text-lg sm:text-xl font-bold text-white">
+                    Design Your Floral Vision
+                  </h3>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#01115b] bg-[#c8a45d] px-2 py-0.5 rounded-full">
+                    Interactive Customizer
+                  </span>
+                </div>
+                <p className="text-xs text-slate-300">
+                  Select occasion, bespoke stems, and styling for transparent estimates & direct consultation
+                </p>
+              </div>
+            </div>
+            {onClose && (
+              <button
+                onClick={onClose}
+                className="p-2 text-slate-300 hover:text-white hover:bg-white/10 rounded-xl transition-all cursor-pointer"
+                aria-label="Close"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            )}
+          </div>
+
+          {/* Modal Body */}
+          <div className="overflow-y-auto p-4 sm:p-8 flex-1">
+            {innerContent}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <section id="estimator" className="py-20 bg-white border-b border-slate-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8">
+        {innerContent}
       </div>
     </section>
   );

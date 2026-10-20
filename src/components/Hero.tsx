@@ -4,11 +4,11 @@ import { ORIGINAL_ASSETS, BUSINESS_INFO } from '../data/floralData';
 
 interface HeroProps {
   onOpenConsultation: () => void;
-  onExplorePortfolio: () => void;
+  onExploreServices: () => void;
   onOpenLogon: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onOpenConsultation, onExplorePortfolio, onOpenLogon }) => {
+export const Hero: React.FC<HeroProps> = ({ onOpenConsultation, onExploreServices, onOpenLogon }) => {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-[#01115b] via-[#01115b] to-[#000a2e] text-white pt-10 pb-20 lg:pt-14 lg:pb-28">
       {/* Subtle floral background glow & ambient pattern (masked softly away from logo) */}
@@ -60,10 +60,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation, onExplorePortfol
             </button>
 
             <button
-              onClick={onExplorePortfolio}
+              onClick={onExploreServices}
               className="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-medium text-white bg-white/10 hover:bg-white/15 border border-white/20 rounded-lg backdrop-blur-sm transition-all cursor-pointer"
             >
-              <span>Explore Portfolio</span>
+              <span>Explore Bespoke Services</span>
               <ArrowRight className="w-4 h-4 text-[#c8a45d]" />
             </button>
 

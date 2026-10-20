@@ -4,11 +4,14 @@ import { ORIGINAL_ASSETS, BUSINESS_INFO } from '../data/floralData';
 
 interface AboutAndVanProps {
   onOpenConsultation: () => void;
+  onOpenDesignVision?: () => void;
 }
 
-export const AboutAndVan: React.FC<AboutAndVanProps> = ({ onOpenConsultation }) => {
+export const AboutAndVan: React.FC<AboutAndVanProps> = ({ onOpenConsultation, onOpenDesignVision }) => {
   return (
-    <section id="piaggio-van" className="py-20 bg-white border-b border-slate-200 overflow-hidden">
+    <section id="about" className="py-20 bg-white border-b border-slate-200 overflow-hidden relative">
+      <div id="piaggio-van" className="absolute -top-24" />
+      <div id="heritage" className="absolute -top-24" />
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">

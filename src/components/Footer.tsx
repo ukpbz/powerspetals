@@ -4,10 +4,13 @@ import { BUSINESS_INFO, ORIGINAL_ASSETS } from '../data/floralData';
 
 interface FooterProps {
   onOpenLogon: () => void;
-  onOpenConsultation: () => void;
+  onNavigate: (page: 'home' | 'design-vision' | 'seasonal-blooms' | 'connect-studio', anchor?: string) => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenLogon, onOpenConsultation }) => {
+export const Footer: React.FC<FooterProps> = ({ 
+  onOpenLogon, 
+  onNavigate
+}) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -19,37 +22,39 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLogon, onOpenConsultation 
         {/* Top Logo & Callout */}
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 pb-12 border-b border-white/10">
           <div className="flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
-            <div className="flex items-center">
+            <button 
+              onClick={() => onNavigate('home')}
+              className="flex items-center cursor-pointer focus:outline-none"
+            >
               <img
                 src={ORIGINAL_ASSETS.logoBanner}
                 alt="Power's Petals Floral Designs Logo"
-                className="h-16 w-auto object-contain"
+                className="h-16 w-auto object-contain hover:scale-105 transition-transform"
               />
-            </div>
+            </button>
             <div>
               <h3 className="font-serif text-2xl font-bold tracking-wide text-white">
-                Power's Petals Floral Design
+                Power's Petals
               </h3>
-              <p className="text-xs text-[#c8a45d] tracking-widest uppercase font-medium mt-0.5">
-                West London · Est. 2014
+              <p className="text-xs text-[#c8a45d] uppercase tracking-widest font-medium">
+                West London Botanical Artistry · Chiswick W4
               </p>
             </div>
           </div>
 
           <div className="flex items-center gap-3">
             <button
-              onClick={onOpenLogon}
-              className="px-4 py-2 text-xs font-semibold text-[#c8a45d] border border-[#c8a45d]/40 rounded-lg hover:bg-[#c8a45d]/10 transition-colors flex items-center gap-1.5 cursor-pointer"
+              onClick={() => onNavigate('connect-studio')}
+              className="px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-[#01115b] bg-[#c8a45d] hover:bg-[#dfc282] rounded-lg transition-colors cursor-pointer"
             >
-              <User className="w-3.5 h-3.5" />
-              <span>Client & Event Logon</span>
+              Connect With Studio
             </button>
-
             <button
-              onClick={onOpenConsultation}
-              className="px-5 py-2 text-xs font-bold uppercase tracking-wider text-[#01115b] bg-gradient-to-r from-[#c8a45d] to-[#e4cc92] rounded-lg shadow hover:opacity-95 transition-opacity cursor-pointer"
+              onClick={scrollToTop}
+              className="p-2.5 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 text-slate-300 hover:text-white transition-colors cursor-pointer"
+              aria-label="Back to top"
             >
-              Book Consultation
+              <ArrowUp className="w-4 h-4" />
             </button>
           </div>
         </div>
@@ -60,14 +65,50 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLogon, onOpenConsultation 
           {/* Col 1: Bespoke Services */}
           <div>
             <h4 className="font-serif text-base font-bold text-white uppercase tracking-wider mb-4 text-[#e4cc92]">
-              Floral Services
+              Services & Studio
             </h4>
             <ul className="space-y-2.5">
-              <li><a href="#services" className="hover:text-[#c8a45d] transition-colors">Luxury Weddings & Bridal</a></li>
-              <li><a href="#services" className="hover:text-[#c8a45d] transition-colors">Dignified Sympathy & Memorials</a></li>
-              <li><a href="#services" className="hover:text-[#c8a45d] transition-colors">Gala & Private Dining Tablescapes</a></li>
-              <li><a href="#piaggio-van" className="hover:text-[#c8a45d] transition-colors">The Piaggio Mobile Flower Van</a></li>
-              <li><a href="#estimator" className="hover:text-[#c8a45d] transition-colors">Interactive Floral Estimator</a></li>
+              <li>
+                <button 
+                  onClick={() => onNavigate('design-vision')} 
+                  className="hover:text-[#c8a45d] transition-colors text-left cursor-pointer flex items-center gap-1.5 text-[#e4cc92] font-semibold"
+                >
+                  <Sparkles className="w-3.5 h-3.5 text-[#c8a45d]" />
+                  <span>Design Your Floral Vision</span>
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => onNavigate('seasonal-blooms')} 
+                  className="hover:text-[#c8a45d] transition-colors text-left cursor-pointer"
+                >
+                  Seasonal Blooms & Conditioning
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => onNavigate('connect-studio')} 
+                  className="hover:text-[#c8a45d] transition-colors text-left cursor-pointer"
+                >
+                  Connect With Our Studio
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => onNavigate('home', 'services')} 
+                  className="hover:text-[#c8a45d] transition-colors text-left cursor-pointer"
+                >
+                  Luxury Weddings & Bridal
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => onNavigate('home', 'services')} 
+                  className="hover:text-[#c8a45d] transition-colors text-left cursor-pointer"
+                >
+                  Dignified Sympathy & Memorials
+                </button>
+              </li>
             </ul>
           </div>
 
@@ -77,11 +118,31 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLogon, onOpenConsultation 
               Delivery Corridors
             </h4>
             <ul className="space-y-2.5">
-              <li><a href="#delivery" className="hover:text-[#c8a45d] transition-colors">Chiswick W4 & Grove Park</a></li>
-              <li><a href="#delivery" className="hover:text-[#c8a45d] transition-colors">Ealing & Ealing Common (W5)</a></li>
-              <li><a href="#delivery" className="hover:text-[#c8a45d] transition-colors">Hammersmith & Ravenscourt (W6)</a></li>
-              <li><a href="#delivery" className="hover:text-[#c8a45d] transition-colors">Shepherds Bush & White City (W12)</a></li>
-              <li><a href="#delivery" className="hover:text-[#c8a45d] transition-colors">Postcode Coverage Checker</a></li>
+              <li>
+                <button onClick={() => onNavigate('home', 'delivery')} className="hover:text-[#c8a45d] transition-colors text-left cursor-pointer">
+                  Chiswick W4 & Grove Park
+                </button>
+              </li>
+              <li>
+                <button onClick={() => onNavigate('home', 'delivery')} className="hover:text-[#c8a45d] transition-colors text-left cursor-pointer">
+                  Ealing & Ealing Common (W5)
+                </button>
+              </li>
+              <li>
+                <button onClick={() => onNavigate('home', 'delivery')} className="hover:text-[#c8a45d] transition-colors text-left cursor-pointer">
+                  Hammersmith & Ravenscourt (W6)
+                </button>
+              </li>
+              <li>
+                <button onClick={() => onNavigate('home', 'delivery')} className="hover:text-[#c8a45d] transition-colors text-left cursor-pointer">
+                  Shepherds Bush & White City (W12)
+                </button>
+              </li>
+              <li>
+                <button onClick={() => onNavigate('home', 'delivery')} className="hover:text-[#c8a45d] transition-colors text-left cursor-pointer">
+                  Postcode Coverage Checker
+                </button>
+              </li>
             </ul>
           </div>
 
@@ -91,18 +152,33 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLogon, onOpenConsultation 
               Studio & Heritage
             </h4>
             <ul className="space-y-2.5">
-              <li><a href="#heritage" className="hover:text-[#c8a45d] transition-colors">Original powerspetals.co.uk Works</a></li>
-              <li><a href="#heritage" className="hover:text-[#c8a45d] transition-colors">Signature Celebration Ribbon Bouquets</a></li>
-              <li><a href="#piaggio-van" className="hover:text-[#c8a45d] transition-colors">Our Piaggio 50 History</a></li>
-              <li><a href="#contact" className="hover:text-[#c8a45d] transition-colors">Grove Park Studios Chiswick</a></li>
-              <li><button onClick={onOpenLogon} className="hover:text-[#c8a45d] transition-colors text-left">Track Active Booking Portal</button></li>
+              <li>
+                <button onClick={() => onNavigate('home', 'about')} className="hover:text-[#c8a45d] transition-colors text-left cursor-pointer">
+                  A True Chiswick Original Story
+                </button>
+              </li>
+              <li>
+                <button onClick={() => onNavigate('home', 'about')} className="hover:text-[#c8a45d] transition-colors text-left cursor-pointer">
+                  The Piaggio Mobile Flower Van
+                </button>
+              </li>
+              <li>
+                <button onClick={() => onNavigate('connect-studio')} className="hover:text-[#c8a45d] transition-colors text-left cursor-pointer">
+                  Grove Park Studios Chiswick
+                </button>
+              </li>
+              <li>
+                <button onClick={onOpenLogon} className="hover:text-[#c8a45d] transition-colors text-left cursor-pointer">
+                  Track Active Booking Portal
+                </button>
+              </li>
             </ul>
           </div>
 
           {/* Col 4: Direct Contacts */}
           <div>
             <h4 className="font-serif text-base font-bold text-white uppercase tracking-wider mb-4 text-[#e4cc92]">
-              Direct Inquiries
+              Direct Contacts
             </h4>
             <div className="space-y-3">
               <div className="flex items-center gap-2">
@@ -112,18 +188,20 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLogon, onOpenConsultation 
                 </a>
               </div>
               <div className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-[#c8a45d]" />
-                <span className="text-slate-300">{BUSINESS_INFO.phoneSecondary}</span>
+                <Phone className="w-3.5 h-3.5 text-slate-400" />
+                <span className="text-slate-300">Landline: {BUSINESS_INFO.phoneSecondary}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-3.5 h-3.5 text-[#c8a45d]" />
-                <a href={`mailto:${BUSINESS_INFO.email}`} className="text-slate-300 hover:text-[#c8a45d]">
+                <a href={`mailto:${BUSINESS_INFO.email}`} className="text-slate-300 hover:text-white">
                   {BUSINESS_INFO.email}
                 </a>
               </div>
-              <div className="flex items-start gap-2 pt-1 text-[11px] text-slate-400">
-                <MapPin className="w-3.5 h-3.5 text-[#c8a45d] flex-shrink-0 mt-0.5" />
-                <span>Grove Park Studios, 188 Sutton Court Rd, Chiswick, London W4 3HR</span>
+              <div className="flex items-start gap-2">
+                <MapPin className="w-3.5 h-3.5 text-[#c8a45d] mt-0.5 flex-shrink-0" />
+                <span className="text-slate-400 leading-tight">
+                  {BUSINESS_INFO.studioAddress}
+                </span>
               </div>
             </div>
           </div>
@@ -131,20 +209,14 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLogon, onOpenConsultation 
         </div>
 
         {/* Bottom Credits & Legal */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-          <div>
-            Copyright Power's Petals Floral Design 2014–2026. All rights reserved.
-          </div>
-
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-slate-400">
+          <p>© {new Date().getFullYear()} Power's Petals. All rights reserved. Handcrafted in Chiswick, West London.</p>
           <div className="flex items-center gap-6">
-            <span>Bespoke Floral Design · West London</span>
-            <button
-              onClick={scrollToTop}
-              className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer"
-              aria-label="Scroll to Top"
-            >
-              <ArrowUp className="w-4 h-4" />
-            </button>
+            <span>Specialist Wedding & Funeral Floristry</span>
+            <span>·</span>
+            <span>Piaggio Ape Van Hire</span>
+            <span>·</span>
+            <span className="text-[#c8a45d]">British Sustainable Blooms</span>
           </div>
         </div>
 
