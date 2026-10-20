@@ -10,11 +10,11 @@ export const SeasonalCalendar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#01125a] bg-[#c8a45d]/15 rounded-full mb-3">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#01115b] bg-[#c8a45d]/15 rounded-full mb-3">
             <Calendar className="w-3.5 h-3.5 text-[#c8a45d]" />
             British & European Bloom Calendar
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-light text-[#01125a]">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-light text-[#01115b]">
             Seasonal Blooms & <span className="italic font-normal text-[#9b7b32]">Florist Conditioning</span>
           </h2>
           <p className="mt-3 text-base text-slate-600">
@@ -31,8 +31,8 @@ export const SeasonalCalendar: React.FC = () => {
                 onClick={() => setSelectedSeason(index)}
                 className={`px-4 sm:px-6 py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all cursor-pointer ${
                   selectedSeason === index
-                    ? 'bg-[#01125a] text-white shadow-md'
-                    : 'text-slate-600 hover:text-[#01125a]'
+                    ? 'bg-[#01115b] text-white shadow-md'
+                    : 'text-slate-600 hover:text-[#01115b]'
                 }`}
               >
                 {item.season}
@@ -48,7 +48,7 @@ export const SeasonalCalendar: React.FC = () => {
               <span className="text-xs font-bold uppercase tracking-widest text-[#c8a45d]">
                 Calendar Window
               </span>
-              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#01125a] mt-1">
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#01115b] mt-1">
                 {SEASONAL_BLOOMS[selectedSeason].month}
               </h3>
             </div>
@@ -59,7 +59,7 @@ export const SeasonalCalendar: React.FC = () => {
 
           <div className="space-y-6">
             <div>
-              <div className="text-xs font-bold uppercase tracking-wider text-[#01125a] mb-3">
+              <div className="text-xs font-bold uppercase tracking-wider text-[#01115b] mb-3">
                 Key Highlight Blooms in Peak Condition:
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
@@ -73,10 +73,10 @@ export const SeasonalCalendar: React.FC = () => {
             </div>
 
             {/* Care Tip */}
-            <div className="p-4 rounded-xl bg-[#01125a]/5 border border-[#01125a]/15 flex items-start gap-3">
-              <Droplets className="w-5 h-5 text-[#01125a] flex-shrink-0 mt-0.5" />
+            <div className="p-4 rounded-xl bg-[#01115b]/5 border border-[#01115b]/15 flex items-start gap-3">
+              <Droplets className="w-5 h-5 text-[#01115b] flex-shrink-0 mt-0.5" />
               <div>
-                <strong className="text-xs uppercase tracking-wider font-bold text-[#01125a] block mb-0.5">
+                <strong className="text-xs uppercase tracking-wider font-bold text-[#01115b] block mb-0.5">
                   Power's Petals Florist Conditioning Secret:
                 </strong>
                 <p className="text-xs text-slate-700 leading-relaxed">

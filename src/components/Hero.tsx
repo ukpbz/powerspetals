@@ -10,23 +10,25 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onOpenConsultation, onExplorePortfolio, onOpenLogon }) => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#01125a] via-[#011566] to-[#000d3d] text-white pt-10 pb-20 lg:pt-14 lg:pb-28">
-      {/* Subtle floral background glow & ambient pattern */}
-      <div className="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(#c8a45d_1px,transparent_1px)] [background-size:24px_24px]" />
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#01115b] via-[#01115b] to-[#000a2e] text-white pt-10 pb-20 lg:pt-14 lg:pb-28">
+      {/* Subtle floral background glow & ambient pattern (masked softly away from logo) */}
+      <div className="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(#c8a45d_1px,transparent_1px)] [background-size:24px_24px] [mask-image:linear-gradient(to_bottom,transparent_0%,transparent_32%,black_55%,black_100%)]" />
       
-      {/* Decorative ambient radial gradients */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#c8a45d]/10 rounded-full blur-3xl pointer-events-none" />
+      {/* Decorative ambient radial gradients positioned below the logo banner */}
+      <div className="absolute top-[58%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#c8a45d]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 left-10 w-96 h-96 bg-[#2d6a4f]/15 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-8">
         
-        {/* The Authentic Hand-Crafted Logo Banner (Unframed) */}
+        {/* The Authentic Hand-Crafted Logo Banner (Seamlessly merged with webpage background) */}
         <div className="flex flex-col items-center justify-center text-center mb-8">
-          <div className="max-w-4xl w-full mx-auto px-2">
+          <div className="max-w-4xl w-full mx-auto px-2 relative group">
+            {/* Ambient soft glow matched to exact logo midnight navy #01115b */}
+            <div className="absolute -inset-4 bg-[#01115b] rounded-3xl blur-xl -z-10 opacity-90 pointer-events-none" />
             <img 
               src={ORIGINAL_ASSETS.logoBanner} 
               alt="Power's Petals - Floral Designs Original Banner" 
-              className="w-full h-auto max-h-52 sm:max-h-72 object-contain mx-auto"
+              className="w-full h-auto max-h-52 sm:max-h-72 object-contain mx-auto transition-transform duration-500 hover:scale-[1.01]"
             />
           </div>
 
@@ -51,7 +53,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation, onExplorePortfol
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
             <button
               onClick={onOpenConsultation}
-              className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-semibold uppercase tracking-wider text-[#01125a] bg-gradient-to-r from-[#c8a45d] to-[#e4cc92] hover:from-[#dfbf79] hover:to-[#f0dcab] rounded-lg shadow-xl shadow-amber-950/20 transition-all transform hover:-translate-y-0.5 cursor-pointer"
+              className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-semibold uppercase tracking-wider text-[#01115b] bg-gradient-to-r from-[#c8a45d] to-[#e4cc92] hover:from-[#dfbf79] hover:to-[#f0dcab] rounded-lg shadow-xl shadow-amber-950/20 transition-all transform hover:-translate-y-0.5 cursor-pointer"
             >
               <Calendar className="w-4 h-4" />
               <span>Request Bespoke Consultation</span>

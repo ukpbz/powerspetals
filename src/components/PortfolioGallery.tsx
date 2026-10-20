@@ -31,11 +31,11 @@ export const PortfolioGallery: React.FC<PortfolioGalleryProps> = ({ onSelectDesi
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#01125a] bg-[#c8a45d]/15 rounded-full mb-3">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#01115b] bg-[#c8a45d]/15 rounded-full mb-3">
               <Sparkles className="w-3.5 h-3.5 text-[#c8a45d]" />
               Artisan Portfolio
             </div>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-light text-[#01125a]">
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-light text-[#01115b]">
               A Curated Gallery of <span className="italic font-normal text-[#9b7b32]">Botanical Creations</span>
             </h2>
             <p className="mt-2 text-slate-600 text-sm max-w-xl">
@@ -51,8 +51,8 @@ export const PortfolioGallery: React.FC<PortfolioGalleryProps> = ({ onSelectDesi
                 onClick={() => setActiveCategory(c.id)}
                 className={`px-3.5 py-1.5 text-xs font-medium rounded-lg transition-all cursor-pointer ${
                   activeCategory === c.id
-                    ? 'bg-[#01125a] text-white shadow-sm'
-                    : 'text-slate-600 hover:text-[#01125a] hover:bg-white/60'
+                    ? 'bg-[#01115b] text-white shadow-sm'
+                    : 'text-slate-600 hover:text-[#01115b] hover:bg-white/60'
                 }`}
               >
                 {c.label}
@@ -85,8 +85,8 @@ export const PortfolioGallery: React.FC<PortfolioGalleryProps> = ({ onSelectDesi
                     {item.badge && (
                       <span className={`text-[11px] font-semibold tracking-wider uppercase px-2.5 py-1 rounded shadow-sm ${
                         item.isOriginalAsset
-                          ? 'bg-[#01125a] text-[#c8a45d]'
-                          : 'bg-white/95 text-[#01125a]'
+                          ? 'bg-[#01115b] text-[#c8a45d]'
+                          : 'bg-white/95 text-[#01115b]'
                       }`}>
                         {item.badge}
                       </span>
@@ -94,8 +94,8 @@ export const PortfolioGallery: React.FC<PortfolioGalleryProps> = ({ onSelectDesi
                   </div>
 
                   {/* Hover overlay button */}
-                  <div className="absolute inset-0 bg-[#01125a]/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <span className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-white text-[#01125a] text-xs font-semibold rounded-lg shadow-lg">
+                  <div className="absolute inset-0 bg-[#01115b]/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-white text-[#01115b] text-xs font-semibold rounded-lg shadow-lg">
                       <Eye className="w-3.5 h-3.5 text-[#c8a45d]" />
                       View Details & Recipe
                     </span>
@@ -118,7 +118,7 @@ export const PortfolioGallery: React.FC<PortfolioGalleryProps> = ({ onSelectDesi
                     )}
                   </div>
 
-                  <h3 className="font-serif text-xl font-semibold text-[#01125a] leading-snug group-hover:text-[#9b7b32] transition-colors">
+                  <h3 className="font-serif text-xl font-semibold text-[#01115b] leading-snug group-hover:text-[#9b7b32] transition-colors">
                     {item.title}
                   </h3>
 
@@ -148,7 +148,7 @@ export const PortfolioGallery: React.FC<PortfolioGalleryProps> = ({ onSelectDesi
               <div className="px-6 pb-6 pt-2">
                 <button
                   onClick={() => onSelectDesign(item.title)}
-                  className="w-full py-2.5 px-4 rounded-xl text-xs font-semibold text-[#01125a] bg-slate-50 hover:bg-[#c8a45d]/20 border border-slate-200 hover:border-[#c8a45d]/40 transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+                  className="w-full py-2.5 px-4 rounded-xl text-xs font-semibold text-[#01115b] bg-slate-50 hover:bg-[#c8a45d]/20 border border-slate-200 hover:border-[#c8a45d]/40 transition-all flex items-center justify-center gap-1.5 cursor-pointer"
                 >
                   <span>Inquire for Similar Design</span>
                   <ArrowRight className="w-3.5 h-3.5 text-[#c8a45d]" />
@@ -165,7 +165,7 @@ export const PortfolioGallery: React.FC<PortfolioGalleryProps> = ({ onSelectDesi
       {activeModalItem && (
         <div 
           onClick={() => setActiveModalItem(null)}
-          className="fixed inset-0 z-50 bg-[#01125a]/90 backdrop-blur-md p-4 sm:p-6 flex items-center justify-center animate-in fade-in"
+          className="fixed inset-0 z-50 bg-[#01115b]/90 backdrop-blur-md p-4 sm:p-6 flex items-center justify-center animate-in fade-in"
         >
           <div 
             onClick={(e) => e.stopPropagation()}
@@ -173,7 +173,7 @@ export const PortfolioGallery: React.FC<PortfolioGalleryProps> = ({ onSelectDesi
           >
             <button
               onClick={() => setActiveModalItem(null)}
-              className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-[#01125a] text-white flex items-center justify-center hover:bg-black transition-colors"
+              className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-[#01115b] text-white flex items-center justify-center hover:bg-black transition-colors"
               aria-label="Close"
             >
               <X className="w-5 h-5" />
@@ -194,7 +194,7 @@ export const PortfolioGallery: React.FC<PortfolioGalleryProps> = ({ onSelectDesi
                 <span>{activeModalItem.occasion}</span>
               </div>
 
-              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#01125a]">
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#01115b]">
                 {activeModalItem.title}
               </h3>
 
@@ -203,7 +203,7 @@ export const PortfolioGallery: React.FC<PortfolioGalleryProps> = ({ onSelectDesi
               </p>
 
               <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
-                <div className="text-xs font-bold uppercase tracking-wider text-[#01125a] mb-2">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#01115b] mb-2">
                   Featured Botanical Stems & Foliage:
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -218,7 +218,7 @@ export const PortfolioGallery: React.FC<PortfolioGalleryProps> = ({ onSelectDesi
               <div className="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4">
                 <div className="text-xs text-slate-500">
                   <span>Standard Handcrafted Delivery: </span>
-                  <strong className="text-[#01125a]">West London (W4, W5, W6, W12)</strong>
+                  <strong className="text-[#01115b]">West London (W4, W5, W6, W12)</strong>
                 </div>
 
                 <div className="flex items-center gap-3">
@@ -228,7 +228,7 @@ export const PortfolioGallery: React.FC<PortfolioGalleryProps> = ({ onSelectDesi
                       setActiveModalItem(null);
                       onSelectDesign(title);
                     }}
-                    className="px-6 py-2.5 text-xs font-semibold uppercase tracking-wider text-white bg-[#01125a] hover:bg-[#000d3d] rounded-lg shadow transition-colors cursor-pointer"
+                    className="px-6 py-2.5 text-xs font-semibold uppercase tracking-wider text-white bg-[#01115b] hover:bg-[#000a2e] rounded-lg shadow transition-colors cursor-pointer"
                   >
                     Customize This Arrangement
                   </button>

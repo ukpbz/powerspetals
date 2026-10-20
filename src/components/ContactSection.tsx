@@ -23,11 +23,11 @@ export const ContactSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#01125a] bg-[#c8a45d]/15 rounded-full mb-3">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#01115b] bg-[#c8a45d]/15 rounded-full mb-3">
             <MessageSquare className="w-3.5 h-3.5 text-[#c8a45d]" />
             Studio Inquiries & Consultations
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-light text-[#01125a]">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-light text-[#01115b]">
             Connect With Our <span className="italic font-normal text-[#9b7b32]">Floristry Studio</span>
           </h2>
           <p className="mt-3 text-base text-slate-600">
@@ -43,16 +43,16 @@ export const ContactSection: React.FC = () => {
             {/* Phone Card */}
             <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:border-[#c8a45d]/40 transition-all">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#01125a]/10 text-[#01125a] flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-[#01115b]/10 text-[#01115b] flex items-center justify-center flex-shrink-0">
                   <Phone className="w-6 h-6 text-[#c8a45d]" />
                 </div>
                 <div>
                   <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500">Telephone Lines</h4>
                   <div className="mt-1 space-y-1">
-                    <a href={`tel:${BUSINESS_INFO.phonePrimary.replace(/\s+/g, '')}`} className="block font-serif text-xl font-bold text-[#01125a] hover:text-[#9b7b32] transition-colors">
+                    <a href={`tel:${BUSINESS_INFO.phonePrimary.replace(/\s+/g, '')}`} className="block font-serif text-xl font-bold text-[#01115b] hover:text-[#9b7b32] transition-colors">
                       {BUSINESS_INFO.phonePrimary}
                     </a>
-                    <a href={`tel:${BUSINESS_INFO.phoneSecondary.replace(/\s+/g, '')}`} className="block text-sm font-medium text-slate-600 hover:text-[#01125a]">
+                    <a href={`tel:${BUSINESS_INFO.phoneSecondary.replace(/\s+/g, '')}`} className="block text-sm font-medium text-slate-600 hover:text-[#01115b]">
                       Studio Landline: {BUSINESS_INFO.phoneSecondary}
                     </a>
                   </div>
@@ -66,12 +66,12 @@ export const ContactSection: React.FC = () => {
             {/* Email Card */}
             <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:border-[#c8a45d]/40 transition-all">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#01125a]/10 text-[#01125a] flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-[#01115b]/10 text-[#01115b] flex items-center justify-center flex-shrink-0">
                   <Mail className="w-6 h-6 text-[#c8a45d]" />
                 </div>
                 <div>
                   <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500">Electronic Mail</h4>
-                  <a href={`mailto:${BUSINESS_INFO.email}`} className="mt-1 block font-serif text-lg font-bold text-[#01125a] hover:text-[#9b7b32] transition-colors">
+                  <a href={`mailto:${BUSINESS_INFO.email}`} className="mt-1 block font-serif text-lg font-bold text-[#01115b] hover:text-[#9b7b32] transition-colors">
                     {BUSINESS_INFO.email}
                   </a>
                   <p className="text-[11px] text-slate-400 mt-2">
@@ -84,7 +84,7 @@ export const ContactSection: React.FC = () => {
             {/* Studio Address */}
             <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:border-[#c8a45d]/40 transition-all">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#01125a]/10 text-[#01125a] flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-[#01115b]/10 text-[#01115b] flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-6 h-6 text-[#c8a45d]" />
                 </div>
                 <div>
@@ -109,7 +109,7 @@ export const ContactSection: React.FC = () => {
                 <div className="w-16 h-16 rounded-full bg-[#2d6a4f]/15 text-[#2d6a4f] flex items-center justify-center mx-auto">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
-                <h3 className="font-serif text-2xl font-bold text-[#01125a]">
+                <h3 className="font-serif text-2xl font-bold text-[#01115b]">
                   Thank You for Reaching Out
                 </h3>
                 <p className="text-sm text-slate-600 max-w-md mx-auto">
@@ -118,7 +118,7 @@ export const ContactSection: React.FC = () => {
                 <div className="pt-4">
                   <button
                     onClick={() => setFormSubmitted(false)}
-                    className="text-xs font-semibold text-[#01125a] underline hover:text-[#9b7b32] cursor-pointer"
+                    className="text-xs font-semibold text-[#01115b] underline hover:text-[#9b7b32] cursor-pointer"
                   >
                     Send another inquiry
                   </button>
@@ -127,7 +127,7 @@ export const ContactSection: React.FC = () => {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="border-b border-slate-100 pb-3 mb-4">
-                  <h3 className="font-serif text-xl font-bold text-[#01125a]">
+                  <h3 className="font-serif text-xl font-bold text-[#01115b]">
                     Send a Message or Booking Request
                   </h3>
                   <p className="text-xs text-slate-500">
@@ -146,7 +146,7 @@ export const ContactSection: React.FC = () => {
                       placeholder="e.g. Lady Sarah Montgomery"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-[#01125a]"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-[#01115b]"
                     />
                   </div>
 
@@ -160,7 +160,7 @@ export const ContactSection: React.FC = () => {
                       placeholder="e.g. 07700 900123"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-[#01125a]"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-[#01115b]"
                     />
                   </div>
                 </div>
@@ -176,7 +176,7 @@ export const ContactSection: React.FC = () => {
                       placeholder="e.g. name@example.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-[#01125a]"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-[#01115b]"
                     />
                   </div>
 
@@ -187,7 +187,7 @@ export const ContactSection: React.FC = () => {
                     <select
                       value={formData.serviceType}
                       onChange={(e) => setFormData({ ...formData, serviceType: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-[#01125a] bg-white"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-[#01115b] bg-white"
                     >
                       <option>Wedding & Bridal Floristry</option>
                       <option>Sympathy & Funeral Tribute</option>
@@ -207,7 +207,7 @@ export const ContactSection: React.FC = () => {
                     type="date"
                     value={formData.eventDate}
                     onChange={(e) => setFormData({ ...formData, eventDate: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-[#01125a]"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-[#01115b]"
                   />
                 </div>
 
@@ -220,13 +220,13 @@ export const ContactSection: React.FC = () => {
                     placeholder="Tell us about your envisioned colors, preferred blooms, venue, or budget considerations..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-[#01125a] resize-none"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-[#01115b] resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-3.5 px-6 rounded-xl bg-[#01125a] hover:bg-[#000d3d] text-white text-xs font-bold uppercase tracking-wider shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full py-3.5 px-6 rounded-xl bg-[#01115b] hover:bg-[#000a2e] text-white text-xs font-bold uppercase tracking-wider shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <Send className="w-4 h-4 text-[#c8a45d]" />
                   <span>Send Consultation Request</span>

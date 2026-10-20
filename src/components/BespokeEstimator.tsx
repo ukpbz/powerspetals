@@ -106,11 +106,11 @@ export const BespokeEstimator: React.FC<BespokeEstimatorProps> = ({ initialDesig
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#01125a] bg-[#c8a45d]/15 rounded-full mb-3">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#01115b] bg-[#c8a45d]/15 rounded-full mb-3">
             <Calculator className="w-3.5 h-3.5 text-[#c8a45d]" />
             Bespoke Customizer & Instant Estimator
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-light text-[#01125a]">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-light text-[#01115b]">
             Design Your <span className="italic font-normal text-[#9b7b32]">Floral Vision</span>
           </h2>
           <p className="mt-3 text-base text-slate-600">
@@ -149,7 +149,7 @@ export const BespokeEstimator: React.FC<BespokeEstimatorProps> = ({ initialDesig
                     }}
                     className={`p-3.5 rounded-xl border text-left transition-all cursor-pointer flex flex-col justify-between ${
                       occasion === opt.id
-                        ? 'border-[#01125a] bg-[#01125a] text-white shadow-md'
+                        ? 'border-[#01115b] bg-[#01115b] text-white shadow-md'
                         : 'border-slate-200 bg-slate-50 text-slate-800 hover:border-slate-300'
                     }`}
                   >
@@ -184,7 +184,7 @@ export const BespokeEstimator: React.FC<BespokeEstimatorProps> = ({ initialDesig
                     }`}
                   >
                     <div className="flex items-center justify-between mb-1.5">
-                      <span className="text-xs font-bold text-[#01125a]">{p.name}</span>
+                      <span className="text-xs font-bold text-[#01115b]">{p.name}</span>
                       <div className="flex items-center gap-1">
                         {p.dots.map((c, i) => (
                           <span key={i} className="w-2.5 h-2.5 rounded-full border border-slate-300" style={{ backgroundColor: c }} />
@@ -217,18 +217,18 @@ export const BespokeEstimator: React.FC<BespokeEstimatorProps> = ({ initialDesig
                       onClick={() => toggleItem(item.id)}
                       className={`p-3.5 rounded-xl border flex items-center justify-between gap-4 cursor-pointer transition-all ${
                         isChecked
-                          ? 'border-[#01125a] bg-[#01125a]/5 shadow-sm'
+                          ? 'border-[#01115b] bg-[#01115b]/5 shadow-sm'
                           : 'border-slate-200 bg-white hover:border-slate-300'
                       }`}
                     >
                       <div className="flex items-start gap-3">
                         <div className={`mt-0.5 w-4 h-4 rounded border flex items-center justify-center transition-colors ${
-                          isChecked ? 'bg-[#01125a] border-[#01125a] text-white' : 'border-slate-300 bg-white'
+                          isChecked ? 'bg-[#01115b] border-[#01115b] text-white' : 'border-slate-300 bg-white'
                         }`}>
                           {isChecked && <Check className="w-3 h-3 stroke-[3]" />}
                         </div>
                         <div>
-                          <div className="text-xs font-bold text-[#01125a]">{item.label}</div>
+                          <div className="text-xs font-bold text-[#01115b]">{item.label}</div>
                           <div className="text-[11px] text-slate-500">{item.description}</div>
                         </div>
                       </div>
@@ -263,7 +263,7 @@ export const BespokeEstimator: React.FC<BespokeEstimatorProps> = ({ initialDesig
                     onClick={() => setRegion(r.id)}
                     className={`p-2.5 rounded-xl border text-left cursor-pointer transition-all ${
                       region === r.id
-                        ? 'border-[#01125a] bg-[#01125a] text-white shadow-sm'
+                        ? 'border-[#01115b] bg-[#01115b] text-white shadow-sm'
                         : 'border-slate-200 bg-slate-50 text-slate-700 hover:border-slate-300'
                     }`}
                   >
@@ -281,11 +281,11 @@ export const BespokeEstimator: React.FC<BespokeEstimatorProps> = ({ initialDesig
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-[#01125a] text-white flex items-center justify-center font-serif text-sm">
+                  <div className="w-8 h-8 rounded-lg bg-[#01115b] text-white flex items-center justify-center font-serif text-sm">
                     🛺
                   </div>
                   <div>
-                    <div className="text-xs font-bold text-[#01125a]">
+                    <div className="text-xs font-bold text-[#01115b]">
                       Dispatch in our Signature Piaggio Van (+£35)
                     </div>
                     <div className="text-[11px] text-slate-500">
@@ -295,7 +295,7 @@ export const BespokeEstimator: React.FC<BespokeEstimatorProps> = ({ initialDesig
                 </div>
 
                 <div className={`w-5 h-5 rounded-full border flex items-center justify-center ${
-                  apeVanRequested ? 'bg-[#01125a] border-[#01125a] text-white' : 'border-slate-300'
+                  apeVanRequested ? 'bg-[#01115b] border-[#01115b] text-white' : 'border-slate-300'
                 }`}>
                   {apeVanRequested && <Check className="w-3 h-3" />}
                 </div>
@@ -306,7 +306,7 @@ export const BespokeEstimator: React.FC<BespokeEstimatorProps> = ({ initialDesig
 
           {/* Real-time Summary Card (5 cols) */}
           <div className="lg:col-span-5">
-            <div className="sticky top-28 rounded-2xl bg-gradient-to-br from-[#01125a] via-[#011566] to-[#000d3d] text-white p-6 sm:p-8 shadow-2xl border border-[#c8a45d]/30">
+            <div className="sticky top-28 rounded-2xl bg-gradient-to-br from-[#01115b] via-[#011566] to-[#000d3d] text-white p-6 sm:p-8 shadow-2xl border border-[#c8a45d]/30">
               
               <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-4">
                 <div>
@@ -422,7 +422,7 @@ export const BespokeEstimator: React.FC<BespokeEstimatorProps> = ({ initialDesig
 
                   <button
                     type="submit"
-                    className="w-full py-3.5 text-center text-xs font-bold uppercase tracking-wider text-[#01125a] bg-gradient-to-r from-[#c8a45d] to-[#e4cc92] hover:from-[#dfbf79] hover:to-[#f0dcab] rounded-lg shadow-lg transition-all cursor-pointer flex items-center justify-center gap-2"
+                    className="w-full py-3.5 text-center text-xs font-bold uppercase tracking-wider text-[#01115b] bg-gradient-to-r from-[#c8a45d] to-[#e4cc92] hover:from-[#dfbf79] hover:to-[#f0dcab] rounded-lg shadow-lg transition-all cursor-pointer flex items-center justify-center gap-2"
                   >
                     <Send className="w-3.5 h-3.5" />
                     <span>Submit for Complimentary Floral Proposal</span>

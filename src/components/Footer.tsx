@@ -13,7 +13,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLogon, onOpenConsultation 
   };
 
   return (
-    <footer className="bg-[#000c3b] text-white border-t border-[#c8a45d]/20 pt-16 pb-12">
+    <footer className="bg-gradient-to-b from-[#01115b] to-[#000a2e] text-white border-t border-[#c8a45d]/20 pt-16 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         
         {/* Top Logo & Callout */}
@@ -47,7 +47,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLogon, onOpenConsultation 
 
             <button
               onClick={onOpenConsultation}
-              className="px-5 py-2 text-xs font-bold uppercase tracking-wider text-[#01125a] bg-gradient-to-r from-[#c8a45d] to-[#e4cc92] rounded-lg shadow hover:opacity-95 transition-opacity cursor-pointer"
+              className="px-5 py-2 text-xs font-bold uppercase tracking-wider text-[#01115b] bg-gradient-to-r from-[#c8a45d] to-[#e4cc92] rounded-lg shadow hover:opacity-95 transition-opacity cursor-pointer"
             >
               Book Consultation
             </button>

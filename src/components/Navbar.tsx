@@ -11,9 +11,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenLogon, onOpenConsultation 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-[#01125a]/95 backdrop-blur-md border-b border-[#c8a45d]/20 text-white shadow-lg transition-all duration-300">
+    <header className="sticky top-0 z-40 w-full bg-[#01115b]/95 backdrop-blur-md border-b border-[#c8a45d]/20 text-white shadow-lg transition-all duration-300">
       {/* Top utility ribbon */}
-      <div className="bg-[#000c3b] border-b border-[#c8a45d]/10 text-xs py-1.5 px-4 sm:px-8">
+      <div className="bg-[#000a2e] border-b border-[#c8a45d]/10 text-xs py-1.5 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2 text-slate-300">
           <div className="flex items-center gap-4 flex-wrap">
             <span className="flex items-center gap-1.5 text-[#c8a45d] font-medium">
@@ -106,7 +106,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenLogon, onOpenConsultation 
           {/* Book Consultation CTA */}
           <button
             onClick={onOpenConsultation}
-            className="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[#01125a] bg-gradient-to-r from-[#c8a45d] to-[#e4cc92] hover:from-[#dfbf79] hover:to-[#f0dcab] rounded shadow-md transition-all cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0"
+            className="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[#01115b] bg-gradient-to-r from-[#c8a45d] to-[#e4cc92] hover:from-[#dfbf79] hover:to-[#f0dcab] rounded shadow-md transition-all cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0"
           >
             <span>Book Consultation</span>
           </button>
@@ -124,7 +124,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenLogon, onOpenConsultation 
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#000d3d] border-b border-[#c8a45d]/30 px-6 py-5 space-y-4 animate-in fade-in slide-in-from-top duration-200">
+        <div className="lg:hidden bg-[#000a2e] border-b border-[#c8a45d]/30 px-6 py-5 space-y-4 animate-in fade-in slide-in-from-top duration-200">
           <div className="flex flex-col space-y-3 text-base">
             <a 
               href="#heritage" 
@@ -184,7 +184,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenLogon, onOpenConsultation 
                 setMobileMenuOpen(false);
                 onOpenConsultation();
               }}
-              className="w-full py-3 text-center text-sm font-semibold uppercase tracking-wider text-[#01125a] bg-gradient-to-r from-[#c8a45d] to-[#e4cc92] rounded shadow"
+              className="w-full py-3 text-center text-sm font-semibold uppercase tracking-wider text-[#01115b] bg-gradient-to-r from-[#c8a45d] to-[#e4cc92] rounded shadow"
             >
               Book Bespoke Consultation
             </button>

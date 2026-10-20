@@ -52,10 +52,10 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#faf9f5] text-[#1b2330] flex flex-col font-sans selection:bg-[#c8a45d]/20 selection:text-[#01125a]">
+    <div className="min-h-screen bg-[#faf9f5] text-[#1b2330] flex flex-col font-sans selection:bg-[#c8a45d]/20 selection:text-[#01115b]">
       {/* Top Notification Toast */}
       {inquiryNotification && (
-        <div className="fixed top-20 right-4 z-50 bg-[#01125a] text-white px-5 py-3 rounded-xl border border-[#c8a45d] shadow-2xl flex items-center gap-3 animate-in fade-in slide-in-from-top-4 duration-300">
+        <div className="fixed top-20 right-4 z-50 bg-[#01115b] text-white px-5 py-3 rounded-xl border border-[#c8a45d] shadow-2xl flex items-center gap-3 animate-in fade-in slide-in-from-top-4 duration-300">
           <span className="text-[#c8a45d] text-lg">🌸</span>
           <span className="text-xs font-medium">{inquiryNotification}</span>
           <button 

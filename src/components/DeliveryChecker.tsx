@@ -89,11 +89,11 @@ export const DeliveryChecker: React.FC = () => {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#01125a] bg-[#c8a45d]/15 rounded-full mb-3">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#01115b] bg-[#c8a45d]/15 rounded-full mb-3">
             <MapPin className="w-3.5 h-3.5 text-[#c8a45d]" />
             Exclusive Delivery Zones
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-light text-[#01125a]">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-light text-[#01115b]">
             Dedicated Postcode Coverage: <br />
             <span className="italic font-normal text-[#9b7b32]">W4 · W5 · W6 · W12</span>
           </h2>
@@ -117,7 +117,7 @@ export const DeliveryChecker: React.FC = () => {
             />
             <button
               type="submit"
-              className="px-6 py-3 bg-[#01125a] hover:bg-[#000d3d] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all cursor-pointer flex items-center gap-1.5 shadow"
+              className="px-6 py-3 bg-[#01115b] hover:bg-[#000d3d] text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all cursor-pointer flex items-center gap-1.5 shadow"
             >
               <Search className="w-3.5 h-3.5" />
               <span>Check Postcode</span>
@@ -142,7 +142,7 @@ export const DeliveryChecker: React.FC = () => {
                     note: `Direct delivery confirmed! Hand-delivered from our Grove Park Studios in Chiswick via our signature Piaggio mobile flower van.`
                   });
                 }}
-                className="text-xs font-semibold text-[#01125a] hover:text-[#c8a45d] underline cursor-pointer"
+                className="text-xs font-semibold text-[#01115b] hover:text-[#c8a45d] underline cursor-pointer"
               >
                 {pc}
               </button>
@@ -164,7 +164,7 @@ export const DeliveryChecker: React.FC = () => {
                 )}
 
                 <div className="space-y-1">
-                  <div className="text-sm font-bold text-[#01125a]">
+                  <div className="text-sm font-bold text-[#01115b]">
                     {result.found 
                       ? `We Deliver to ${result.entered} — ${result.area?.name} (${result.area?.code})`
                       : `${result.entered} is Outside Our Standard Delivery Zone`
@@ -192,7 +192,7 @@ export const DeliveryChecker: React.FC = () => {
                     <div className="pt-2">
                       <a
                         href={`tel:${BUSINESS_INFO.phonePrimary.replace(/\s+/g, '')}`}
-                        className="inline-flex items-center gap-1.5 text-xs font-bold text-[#01125a] hover:text-[#c8a45d]"
+                        className="inline-flex items-center gap-1.5 text-xs font-bold text-[#01115b] hover:text-[#c8a45d]"
                       >
                         <Phone className="w-3.5 h-3.5 text-[#c8a45d]" />
                         <span>Enquire for Venue Exception: {BUSINESS_INFO.phonePrimary}</span>
@@ -214,7 +214,7 @@ export const DeliveryChecker: React.FC = () => {
             >
               <div>
                 <div className="flex items-center justify-between mb-3">
-                  <span className="font-serif text-3xl font-extrabold text-[#01125a]">
+                  <span className="font-serif text-3xl font-extrabold text-[#01115b]">
                     {area.code}
                   </span>
                   <span className="text-[10px] font-bold uppercase bg-[#2d6a4f]/10 text-[#2d6a4f] px-2 py-0.5 rounded">
@@ -222,7 +222,7 @@ export const DeliveryChecker: React.FC = () => {
                   </span>
                 </div>
 
-                <h3 className="font-serif text-lg font-bold text-[#01125a]">
+                <h3 className="font-serif text-lg font-bold text-[#01115b]">
                   {area.name}
                 </h3>
 

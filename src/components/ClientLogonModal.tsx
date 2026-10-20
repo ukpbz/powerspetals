@@ -168,7 +168,7 @@ export const ClientLogonModal: React.FC<ClientLogonModalProps> = ({ isOpen, onCl
         }`}
       >
         {/* Modal Top Bar */}
-        <div className="bg-[#01125a] px-6 py-4 text-white flex items-center justify-between border-b border-[#c8a45d]/20 flex-shrink-0">
+        <div className="bg-[#01115b] px-6 py-4 text-white flex items-center justify-between border-b border-[#c8a45d]/20 flex-shrink-0">
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-lg bg-white/10 border border-[#c8a45d]/40 flex items-center justify-center text-[#c8a45d]">
               {activeTab === 'admin_dashboard' ? <Settings className="w-5 h-5 text-[#c8a45d]" /> : <Lock className="w-4 h-4" />}
@@ -220,8 +220,8 @@ export const ClientLogonModal: React.FC<ClientLogonModalProps> = ({ isOpen, onCl
                     }}
                     className={`px-4 py-1.5 text-xs font-semibold rounded-lg transition-all cursor-pointer flex items-center gap-1.5 ${
                       mode === 'client' 
-                        ? 'bg-[#01125a] text-white shadow-sm' 
-                        : 'text-slate-600 hover:text-[#01125a]'
+                        ? 'bg-[#01115b] text-white shadow-sm' 
+                        : 'text-slate-600 hover:text-[#01115b]'
                     }`}
                   >
                     <User className="w-3.5 h-3.5" />
@@ -233,8 +233,8 @@ export const ClientLogonModal: React.FC<ClientLogonModalProps> = ({ isOpen, onCl
                     onClick={handleFillAdminCredentials}
                     className={`px-4 py-1.5 text-xs font-semibold rounded-lg transition-all cursor-pointer flex items-center gap-1.5 ${
                       mode === 'admin' 
-                        ? 'bg-[#c8a45d] text-[#01125a] shadow-sm font-bold' 
-                        : 'text-slate-600 hover:text-[#01125a]'
+                        ? 'bg-[#c8a45d] text-[#01115b] shadow-sm font-bold' 
+                        : 'text-slate-600 hover:text-[#01115b]'
                     }`}
                   >
                     <Settings className="w-3.5 h-3.5" />
@@ -245,7 +245,7 @@ export const ClientLogonModal: React.FC<ClientLogonModalProps> = ({ isOpen, onCl
 
               {/* Login Header */}
               <div className="text-center max-w-md mx-auto">
-                <h4 className="font-serif text-2xl font-semibold text-[#01125a]">
+                <h4 className="font-serif text-2xl font-semibold text-[#01115b]">
                   {mode === 'admin' ? "Florist Studio Management Login" : "Log In to Your Floral Account"}
                 </h4>
                 <p className="text-xs text-slate-500 mt-1">
@@ -258,7 +258,7 @@ export const ClientLogonModal: React.FC<ClientLogonModalProps> = ({ isOpen, onCl
 
               {/* Credential Helper Box for quick testing */}
               <div className="max-w-md mx-auto p-3 rounded-xl bg-amber-50 border border-amber-200 text-xs text-slate-700 space-y-1">
-                <div className="font-bold text-[#01125a] flex items-center justify-between">
+                <div className="font-bold text-[#01115b] flex items-center justify-between">
                   <span>🔑 Studio Admin Credentials:</span>
                   <button
                     type="button"
@@ -292,7 +292,7 @@ export const ClientLogonModal: React.FC<ClientLogonModalProps> = ({ isOpen, onCl
                     placeholder={mode === 'admin' ? "admin@powerspetals.com" : "e.g. PP-WED-2026-884 or Charlotte Vane"}
                     value={identifier}
                     onChange={(e) => setIdentifier(e.target.value)}
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#01125a] focus:border-transparent"
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#01115b] focus:border-transparent"
                   />
                 </div>
 
@@ -305,7 +305,7 @@ export const ClientLogonModal: React.FC<ClientLogonModalProps> = ({ isOpen, onCl
                     placeholder={mode === 'admin' ? "powers2014" : "Enter venue postcode or passcode"}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#01125a] focus:border-transparent"
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#01115b] focus:border-transparent"
                   />
                 </div>
 
@@ -313,8 +313,8 @@ export const ClientLogonModal: React.FC<ClientLogonModalProps> = ({ isOpen, onCl
                   type="submit"
                   className={`w-full py-3 text-xs font-bold uppercase tracking-wider rounded-xl shadow-md transition-all cursor-pointer flex items-center justify-center gap-2 ${
                     mode === 'admin'
-                      ? 'bg-gradient-to-r from-[#c8a45d] to-[#e4cc92] text-[#01125a] hover:opacity-95'
-                      : 'bg-[#01125a] text-white hover:bg-[#000d3d]'
+                      ? 'bg-gradient-to-r from-[#c8a45d] to-[#e4cc92] text-[#01115b] hover:opacity-95'
+                      : 'bg-[#01115b] text-white hover:bg-[#000a2e]'
                   }`}
                 >
                   <Sparkles className="w-4 h-4" />
@@ -339,7 +339,7 @@ export const ClientLogonModal: React.FC<ClientLogonModalProps> = ({ isOpen, onCl
                       <div className="text-[10px] font-bold uppercase text-[#c8a45d]">
                         {demo.eventType}
                       </div>
-                      <div className="text-xs font-bold text-[#01125a] truncate group-hover:text-[#9b7b32]">
+                      <div className="text-xs font-bold text-[#01115b] truncate group-hover:text-[#9b7b32]">
                         {demo.clientName}
                       </div>
                       <div className="text-[10px] text-slate-500 truncate mt-0.5">
@@ -363,13 +363,13 @@ export const ClientLogonModal: React.FC<ClientLogonModalProps> = ({ isOpen, onCl
                   <div className="flex items-center gap-2 text-xs font-semibold text-[#c8a45d] uppercase tracking-wider">
                     <span>{currentOrder.bookingId}</span>
                     <span>·</span>
-                    <span className="text-[#01125a] font-bold">{currentOrder.eventType}</span>
+                    <span className="text-[#01115b] font-bold">{currentOrder.eventType}</span>
                   </div>
-                  <h4 className="font-serif text-2xl font-bold text-[#01125a] mt-0.5">
+                  <h4 className="font-serif text-2xl font-bold text-[#01115b] mt-0.5">
                     {currentOrder.clientName}
                   </h4>
                   <div className="flex items-center gap-2 text-xs text-slate-500 mt-1">
-                    <Calendar className="w-3.5 h-3.5 text-[#01125a]" />
+                    <Calendar className="w-3.5 h-3.5 text-[#01115b]" />
                     <span>Event Date: <strong>{currentOrder.date}</strong></span>
                   </div>
                 </div>
@@ -401,7 +401,7 @@ export const ClientLogonModal: React.FC<ClientLogonModalProps> = ({ isOpen, onCl
                       key={idx} 
                       className={`p-2 rounded-lg border flex flex-col items-center gap-1 ${
                         step.done 
-                          ? 'bg-[#01125a] text-white border-[#01125a]' 
+                          ? 'bg-[#01115b] text-white border-[#01115b]' 
                           : 'bg-slate-100 text-slate-400 border-slate-200'
                       }`}
                     >
@@ -417,7 +417,7 @@ export const ClientLogonModal: React.FC<ClientLogonModalProps> = ({ isOpen, onCl
               {/* Details Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="p-4 rounded-xl border border-slate-200 space-y-2">
-                  <div className="text-xs font-bold uppercase tracking-wider text-[#01125a] flex items-center gap-1.5">
+                  <div className="text-xs font-bold uppercase tracking-wider text-[#01115b] flex items-center gap-1.5">
                     <Sparkles className="w-3.5 h-3.5 text-[#c8a45d]" />
                     Floral Recipe & Palette
                   </div>
@@ -437,7 +437,7 @@ export const ClientLogonModal: React.FC<ClientLogonModalProps> = ({ isOpen, onCl
                 </div>
 
                 <div className="p-4 rounded-xl border border-slate-200 space-y-2">
-                  <div className="text-xs font-bold uppercase tracking-wider text-[#01125a] flex items-center gap-1.5">
+                  <div className="text-xs font-bold uppercase tracking-wider text-[#01115b] flex items-center gap-1.5">
                     <Truck className="w-3.5 h-3.5 text-[#c8a45d]" />
                     Delivery Logistics
                   </div>
@@ -476,11 +476,11 @@ export const ClientLogonModal: React.FC<ClientLogonModalProps> = ({ isOpen, onCl
                       placeholder="e.g. Add 2 additional groom buttonholes, change ribbon to cream..."
                       value={amendmentText}
                       onChange={(e) => setAmendmentText(e.target.value)}
-                      className="flex-1 px-3 py-2 text-xs border border-slate-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#01125a]"
+                      className="flex-1 px-3 py-2 text-xs border border-slate-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#01115b]"
                     />
                     <button
                       type="submit"
-                      className="px-4 py-2 bg-[#01125a] text-white text-xs font-semibold rounded-lg hover:bg-[#000d3d] cursor-pointer"
+                      className="px-4 py-2 bg-[#01115b] text-white text-xs font-semibold rounded-lg hover:bg-[#000a2e] cursor-pointer"
                     >
                       Send Note
                     </button>
@@ -493,7 +493,7 @@ export const ClientLogonModal: React.FC<ClientLogonModalProps> = ({ isOpen, onCl
                 <button
                   type="button"
                   onClick={() => setActiveTab('logon')}
-                  className="text-slate-500 hover:text-[#01125a] underline"
+                  className="text-slate-500 hover:text-[#01115b] underline"
                 >
                   &larr; Switch Account / Log Out
                 </button>
@@ -501,7 +501,7 @@ export const ClientLogonModal: React.FC<ClientLogonModalProps> = ({ isOpen, onCl
                 <div className="flex items-center gap-3">
                   <a
                     href={`tel:${BUSINESS_INFO.phonePrimary.replace(/\s+/g, '')}`}
-                    className="inline-flex items-center gap-1.5 text-[#01125a] font-semibold hover:text-[#c8a45d]"
+                    className="inline-flex items-center gap-1.5 text-[#01115b] font-semibold hover:text-[#c8a45d]"
                   >
                     <Phone className="w-3.5 h-3.5" />
                     <span>Call Studio: {BUSINESS_INFO.phonePrimary}</span>
@@ -531,7 +531,7 @@ export const ClientLogonModal: React.FC<ClientLogonModalProps> = ({ isOpen, onCl
                       Studio Management Console
                     </span>
                   </div>
-                  <h4 className="font-serif text-2xl font-bold text-[#01125a] mt-0.5">
+                  <h4 className="font-serif text-2xl font-bold text-[#01115b] mt-0.5">
                     Chiswick Studio & Piaggio Dispatch Control
                   </h4>
                   <p className="text-xs text-slate-500">
@@ -542,7 +542,7 @@ export const ClientLogonModal: React.FC<ClientLogonModalProps> = ({ isOpen, onCl
                 <div className="flex items-center gap-2">
                   <button
                     onClick={() => setShowAddOrder(!showAddOrder)}
-                    className="px-3.5 py-2 bg-[#01125a] text-white text-xs font-semibold rounded-lg hover:bg-[#000d3d] flex items-center gap-1.5 cursor-pointer shadow-sm"
+                    className="px-3.5 py-2 bg-[#01115b] text-white text-xs font-semibold rounded-lg hover:bg-[#000a2e] flex items-center gap-1.5 cursor-pointer shadow-sm"
                   >
                     <Plus className="w-4 h-4 text-[#c8a45d]" />
                     <span>{showAddOrder ? "Close Form" : "New Booking"}</span>
@@ -560,7 +560,7 @@ export const ClientLogonModal: React.FC<ClientLogonModalProps> = ({ isOpen, onCl
               {/* Add New Order Modal Drawer */}
               {showAddOrder && (
                 <form onSubmit={handleCreateOrder} className="p-5 rounded-xl bg-white border border-[#c8a45d]/40 shadow-md space-y-4 animate-in fade-in">
-                  <div className="font-serif text-lg font-bold text-[#01125a] border-b border-slate-100 pb-2">
+                  <div className="font-serif text-lg font-bold text-[#01115b] border-b border-slate-100 pb-2">
                     Create New Client Floral Booking
                   </div>
 
@@ -633,7 +633,7 @@ export const ClientLogonModal: React.FC<ClientLogonModalProps> = ({ isOpen, onCl
                     </button>
                     <button
                       type="submit"
-                      className="px-5 py-2 bg-[#01125a] text-white text-xs font-bold uppercase rounded-lg hover:bg-[#000d3d]"
+                      className="px-5 py-2 bg-[#01115b] text-white text-xs font-bold uppercase rounded-lg hover:bg-[#000a2e]"
                     >
                       Save Booking
                     </button>
@@ -661,7 +661,7 @@ export const ClientLogonModal: React.FC<ClientLogonModalProps> = ({ isOpen, onCl
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                         <div>
                           <div className="flex items-center gap-2">
-                            <span className="text-[11px] font-mono font-bold text-[#01125a] bg-slate-100 px-2 py-0.5 rounded">
+                            <span className="text-[11px] font-mono font-bold text-[#01115b] bg-slate-100 px-2 py-0.5 rounded">
                               {order.bookingId}
                             </span>
                             <span className="text-xs font-semibold text-[#c8a45d] uppercase tracking-wider">
@@ -670,7 +670,7 @@ export const ClientLogonModal: React.FC<ClientLogonModalProps> = ({ isOpen, onCl
                             <span className="text-slate-400">·</span>
                             <span className="text-xs text-slate-500">{order.date}</span>
                           </div>
-                          <h6 className="font-serif text-lg font-bold text-[#01125a] mt-0.5">
+                          <h6 className="font-serif text-lg font-bold text-[#01115b] mt-0.5">
                             {order.clientName}
                           </h6>
                           <div className="text-xs text-slate-500">
@@ -684,7 +684,7 @@ export const ClientLogonModal: React.FC<ClientLogonModalProps> = ({ isOpen, onCl
                           <select
                             value={order.status}
                             onChange={(e) => updateOrderStatus(order.bookingId, e.target.value as any)}
-                            className="text-xs font-semibold px-2.5 py-1.5 rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-1 focus:ring-[#01125a]"
+                            className="text-xs font-semibold px-2.5 py-1.5 rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-1 focus:ring-[#01115b]"
                           >
                             <option value="Design Confirmed">Design Confirmed</option>
                             <option value="Stems Sourced">Stems Sourced</option>
@@ -719,7 +719,7 @@ export const ClientLogonModal: React.FC<ClientLogonModalProps> = ({ isOpen, onCl
               {/* Dawn Market Procurement List */}
               <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
                 <div className="flex items-center justify-between mb-2">
-                  <h6 className="text-xs font-bold uppercase tracking-wider text-[#01125a] flex items-center gap-1.5">
+                  <h6 className="text-xs font-bold uppercase tracking-wider text-[#01115b] flex items-center gap-1.5">
                     <Sparkles className="w-3.5 h-3.5 text-[#c8a45d]" />
                     New Covent Garden Market Morning Procurement
                   </h6>
@@ -728,19 +728,19 @@ export const ClientLogonModal: React.FC<ClientLogonModalProps> = ({ isOpen, onCl
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
                   <div className="bg-white p-2 rounded border border-slate-200">
                     <div className="text-[10px] text-slate-400">Roses (Patience & Avalanche)</div>
-                    <div className="font-bold text-[#01125a]">120 Stems (In Studio)</div>
+                    <div className="font-bold text-[#01115b]">120 Stems (In Studio)</div>
                   </div>
                   <div className="bg-white p-2 rounded border border-slate-200">
                     <div className="text-[10px] text-slate-400">Gerberas (Ruby & Buttery)</div>
-                    <div className="font-bold text-[#01125a]">80 Stems (Conditioned)</div>
+                    <div className="font-bold text-[#01115b]">80 Stems (Conditioned)</div>
                   </div>
                   <div className="bg-white p-2 rounded border border-slate-200">
                     <div className="text-[10px] text-slate-400">Sweet Peas & Hydrangeas</div>
-                    <div className="font-bold text-[#01125a]">65 Stems (Hydrating)</div>
+                    <div className="font-bold text-[#01115b]">65 Stems (Hydrating)</div>
                   </div>
                   <div className="bg-white p-2 rounded border border-slate-200">
                     <div className="text-[10px] text-slate-400">Silver Dollar Eucalyptus</div>
-                    <div className="font-bold text-[#01125a]">15 Bunches (Cut & Ready)</div>
+                    <div className="font-bold text-[#01115b]">15 Bunches (Cut & Ready)</div>
                   </div>
                 </div>
               </div>
@@ -761,7 +761,7 @@ export const ClientLogonModal: React.FC<ClientLogonModalProps> = ({ isOpen, onCl
             {activeTab !== 'logon' && (
               <button
                 onClick={() => setActiveTab('logon')}
-                className="text-[#01125a] hover:underline font-semibold"
+                className="text-[#01115b] hover:underline font-semibold"
               >
                 Switch Account / Sign Out
               </button>

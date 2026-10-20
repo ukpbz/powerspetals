@@ -14,7 +14,8 @@ export const BUSINESS_INFO = {
 };
 
 export const ORIGINAL_ASSETS = {
-  logoBanner: "/images/Main_Header.gif",
+  logoBanner: "/images/Main_Header_transparent.png",
+  logoBannerOriginal: "/images/Main_Header.gif",
   triptych: "/images/powers-petal.gif",
   bouquet: "/images/bouquet-original.jpg",
   piaggioTruck: "/images/piaggio-truck.jpg",
