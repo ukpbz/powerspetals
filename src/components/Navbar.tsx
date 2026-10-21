@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Phone, Mail, User, Menu, X, Sparkles, MapPin, ChevronDown, Calendar, MessageSquare, ArrowRight, Layers, Calculator } from 'lucide-react';
+import { Phone, Mail, User, Menu, X, Sparkles, MapPin, ChevronDown, Calendar, MessageSquare, ArrowRight, Layers, Calculator, Award, Truck } from 'lucide-react';
 import { BUSINESS_INFO, ORIGINAL_ASSETS } from '../data/floralData';
 
-export type PageId = 'home' | 'tailored-services' | 'design-vision' | 'seasonal-blooms' | 'connect-studio';
+export type PageId = 'home' | 'chiswick-original' | 'tailored-services' | 'design-vision' | 'seasonal-blooms' | 'connect-studio' | 'delivery-areas';
 
 interface NavbarProps {
   currentPage: PageId;
@@ -94,8 +94,10 @@ export const Navbar: React.FC<NavbarProps> = ({
         {/* Desktop Nav Links */}
         <nav className="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-200">
           <button 
-            onClick={() => onNavigate('home', 'about')} 
-            className="hover:text-[#c8a45d] transition-colors py-1 cursor-pointer"
+            onClick={() => onNavigate('chiswick-original')} 
+            className={`transition-colors py-1 cursor-pointer ${
+              currentPage === 'chiswick-original' ? 'text-[#c8a45d] font-semibold border-b-2 border-[#c8a45d]' : 'text-slate-200 hover:text-[#c8a45d]'
+            }`}
           >
             Chiswick Original
           </button>
@@ -110,7 +112,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button 
               onClick={() => setServicesMenuOpen(!servicesMenuOpen)}
               className={`flex items-center gap-1.5 py-2 font-medium transition-colors cursor-pointer ${
-                isServicesActive ? 'text-[#c8a45d]' : 'text-slate-200 hover:text-[#c8a45d]'
+                isServicesActive ? 'text-[#c8a45d] font-semibold' : 'text-slate-200 hover:text-[#c8a45d]'
               }`}
               aria-haspopup="true"
               aria-expanded={servicesMenuOpen}
@@ -224,8 +226,10 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
 
           <button 
-            onClick={() => onNavigate('home', 'delivery')} 
-            className="hover:text-[#c8a45d] transition-colors py-1 cursor-pointer"
+            onClick={() => onNavigate('delivery-areas')} 
+            className={`transition-colors py-1 cursor-pointer ${
+              currentPage === 'delivery-areas' ? 'text-[#c8a45d] font-semibold border-b-2 border-[#c8a45d]' : 'text-slate-200 hover:text-[#c8a45d]'
+            }`}
           >
             Delivery Areas
           </button>
@@ -269,9 +273,11 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button 
               onClick={() => {
                 setMobileMenuOpen(false);
-                onNavigate('home', 'about');
+                onNavigate('chiswick-original');
               }}
-              className="text-left text-slate-200 hover:text-[#c8a45d] py-1 border-b border-slate-800 cursor-pointer"
+              className={`text-left py-1 border-b border-slate-800 cursor-pointer ${
+                currentPage === 'chiswick-original' ? 'text-[#c8a45d] font-semibold' : 'text-slate-200 hover:text-[#c8a45d]'
+              }`}
             >
               Chiswick Original & Story
             </button>
@@ -351,9 +357,11 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button 
               onClick={() => {
                 setMobileMenuOpen(false);
-                onNavigate('home', 'delivery');
+                onNavigate('delivery-areas');
               }}
-              className="text-left text-slate-200 hover:text-[#c8a45d] py-1 border-b border-slate-800 cursor-pointer"
+              className={`text-left py-1 border-b border-slate-800 cursor-pointer ${
+                currentPage === 'delivery-areas' ? 'text-[#c8a45d] font-semibold' : 'text-slate-200 hover:text-[#c8a45d]'
+              }`}
             >
               Delivery Coverage (W4, W5, W6, W12)
             </button>

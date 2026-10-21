@@ -6,10 +6,10 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar, PageId } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { AboutAndVan } from './components/AboutAndVan';
-import { DeliveryChecker } from './components/DeliveryChecker';
 import { Footer } from './components/Footer';
 import { ClientLogonModal } from './components/ClientLogonModal';
+import { ChiswickOriginalPage } from './pages/ChiswickOriginalPage';
+import { DeliveryAreasPage } from './pages/DeliveryAreasPage';
 import { TailoredServicesPage } from './pages/TailoredServicesPage';
 import { SeasonalBloomsPage } from './pages/SeasonalBloomsPage';
 import { ConnectStudioPage } from './pages/ConnectStudioPage';
@@ -25,7 +25,13 @@ export default function App() {
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.toLowerCase();
-      if (hash.includes('tailored-services') || hash.includes('services')) {
+      if (hash.includes('chiswick-original') || hash.includes('about')) {
+        setCurrentPage('chiswick-original');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (hash.includes('delivery-areas') || hash.includes('delivery')) {
+        setCurrentPage('delivery-areas');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (hash.includes('tailored-services') || hash.includes('services')) {
         setCurrentPage('tailored-services');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else if (hash.includes('seasonal-blooms') || hash.includes('seasonal')) {
@@ -39,14 +45,7 @@ export default function App() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
         setCurrentPage('home');
-        // Handle home anchor jumps (e.g. #about, #delivery)
-        const match = hash.match(/^#\/?([a-z0-9_-]+)/);
-        if (match && !['services', 'tailored-services', 'seasonal-blooms', 'connect-studio', 'design-vision'].includes(match[1])) {
-          setTimeout(() => {
-            const el = document.getElementById(match[1]);
-            if (el) el.scrollIntoView({ behavior: 'smooth' });
-          }, 150);
-        }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     };
 
@@ -58,18 +57,10 @@ export default function App() {
   const handleNavigate = (page: PageId, anchor?: string) => {
     setCurrentPage(page);
     if (page === 'home') {
-      if (anchor) {
-        window.location.hash = `#${anchor}`;
-        setTimeout(() => {
-          const el = document.getElementById(anchor);
-          if (el) el.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-      } else {
-        window.location.hash = '';
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
+      window.location.hash = '';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
-      window.location.hash = `#/services/${page}`;
+      window.location.hash = `#/${page}`;
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
@@ -102,7 +93,7 @@ export default function App() {
         </div>
       )}
 
-      {/* Navigation with Services menu heading and 4 subpages */}
+      {/* Navigation Header */}
       <Navbar 
         currentPage={currentPage}
         onNavigate={handleNavigate}
@@ -112,25 +103,28 @@ export default function App() {
       {/* Main Content Area */}
       <main className="flex-1">
         {currentPage === 'home' && (
-          <>
-            {/* Hero with Authentic Logo Banner & Royal Navy Backdrop */}
-            <Hero 
-              onOpenConsultation={() => handleNavigate('connect-studio')}
-              onExploreServices={() => handleNavigate('tailored-services')}
-              onOpenLogon={() => setIsLogonOpen(true)}
-            />
-
-            {/* 'A True Chiswick Original, Crafted with Heart & Stem' */}
-            <AboutAndVan 
-              onOpenConsultation={() => handleNavigate('connect-studio')}
-              onOpenDesignVision={() => handleNavigate('design-vision')}
-            />
-
-            {/* Interactive UK Postcode Delivery Checker (West London W4, W5, W6, W12) */}
-            <DeliveryChecker />
-          </>
+          <Hero 
+            onOpenConsultation={() => handleNavigate('connect-studio')}
+            onExploreServices={() => handleNavigate('tailored-services')}
+            onOpenLogon={() => setIsLogonOpen(true)}
+          />
         )}
 
+        {/* Dedicated Page: 'A True Chiswick Original, Crafted with Heart & Stem' */}
+        {currentPage === 'chiswick-original' && (
+          <ChiswickOriginalPage 
+            onNavigate={handleNavigate}
+          />
+        )}
+
+        {/* Dedicated Page: 'Dedicated Postcode Coverage' */}
+        {currentPage === 'delivery-areas' && (
+          <DeliveryAreasPage 
+            onNavigate={handleNavigate}
+          />
+        )}
+
+        {/* Dedicated Page: 'Tailored Floral Services Across West London' */}
         {currentPage === 'tailored-services' && (
           <TailoredServicesPage 
             onNavigate={handleNavigate}
@@ -138,6 +132,7 @@ export default function App() {
           />
         )}
 
+        {/* Dedicated Page: 'Design Your Floral Vision' */}
         {currentPage === 'design-vision' && (
           <DesignVisionPage 
             initialDesign={selectedDesign}
@@ -146,12 +141,14 @@ export default function App() {
           />
         )}
 
+        {/* Dedicated Page: 'Seasonal Blooms & Florist Conditioning' */}
         {currentPage === 'seasonal-blooms' && (
           <SeasonalBloomsPage 
             onNavigate={handleNavigate}
           />
         )}
 
+        {/* Dedicated Page: 'Connect With Our Floristry Studio' */}
         {currentPage === 'connect-studio' && (
           <ConnectStudioPage 
             onNavigate={handleNavigate}
@@ -159,7 +156,7 @@ export default function App() {
         )}
       </main>
 
-      {/* Luxury Footer with Heritage, Copyright & Navigation */}
+      {/* Luxury Footer with Heritage, Copyright & Universal Navigation (Exact same across all pages) */}
       <Footer 
         onOpenLogon={() => setIsLogonOpen(true)}
         onNavigate={handleNavigate}

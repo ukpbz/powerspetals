@@ -4,7 +4,7 @@ import { BUSINESS_INFO, ORIGINAL_ASSETS } from '../data/floralData';
 
 interface FooterProps {
   onOpenLogon: () => void;
-  onNavigate: (page: 'home' | 'tailored-services' | 'design-vision' | 'seasonal-blooms' | 'connect-studio', anchor?: string) => void;
+  onNavigate: (page: 'home' | 'chiswick-original' | 'tailored-services' | 'design-vision' | 'seasonal-blooms' | 'connect-studio' | 'delivery-areas', anchor?: string) => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({ 
@@ -70,7 +70,7 @@ export const Footer: React.FC<FooterProps> = ({
             <ul className="space-y-2.5">
               <li>
                 <button 
-                  onClick={() => onNavigate('tailored-services' as any)} 
+                  onClick={() => onNavigate('tailored-services')} 
                   className="hover:text-[#c8a45d] transition-colors text-left cursor-pointer font-semibold text-[#e4cc92]"
                 >
                   Tailored Floral Services
@@ -111,27 +111,27 @@ export const Footer: React.FC<FooterProps> = ({
             </h4>
             <ul className="space-y-2.5">
               <li>
-                <button onClick={() => onNavigate('home', 'delivery')} className="hover:text-[#c8a45d] transition-colors text-left cursor-pointer">
+                <button onClick={() => onNavigate('delivery-areas')} className="hover:text-[#c8a45d] transition-colors text-left cursor-pointer">
                   Chiswick W4 & Grove Park
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('home', 'delivery')} className="hover:text-[#c8a45d] transition-colors text-left cursor-pointer">
+                <button onClick={() => onNavigate('delivery-areas')} className="hover:text-[#c8a45d] transition-colors text-left cursor-pointer">
                   Ealing & Ealing Common (W5)
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('home', 'delivery')} className="hover:text-[#c8a45d] transition-colors text-left cursor-pointer">
+                <button onClick={() => onNavigate('delivery-areas')} className="hover:text-[#c8a45d] transition-colors text-left cursor-pointer">
                   Hammersmith & Ravenscourt (W6)
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('home', 'delivery')} className="hover:text-[#c8a45d] transition-colors text-left cursor-pointer">
+                <button onClick={() => onNavigate('delivery-areas')} className="hover:text-[#c8a45d] transition-colors text-left cursor-pointer">
                   Shepherds Bush & White City (W12)
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('home', 'delivery')} className="hover:text-[#c8a45d] transition-colors text-left cursor-pointer">
+                <button onClick={() => onNavigate('delivery-areas')} className="hover:text-[#c8a45d] transition-colors text-left cursor-pointer">
                   Postcode Coverage Checker
                 </button>
               </li>
@@ -145,12 +145,12 @@ export const Footer: React.FC<FooterProps> = ({
             </h4>
             <ul className="space-y-2.5">
               <li>
-                <button onClick={() => onNavigate('home', 'about')} className="hover:text-[#c8a45d] transition-colors text-left cursor-pointer">
+                <button onClick={() => onNavigate('chiswick-original')} className="hover:text-[#c8a45d] transition-colors text-left cursor-pointer">
                   A True Chiswick Original Story
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('home', 'about')} className="hover:text-[#c8a45d] transition-colors text-left cursor-pointer">
+                <button onClick={() => onNavigate('chiswick-original')} className="hover:text-[#c8a45d] transition-colors text-left cursor-pointer">
                   The Bespoke Flower Delivery Van
                 </button>
               </li>

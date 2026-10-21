@@ -15,9 +15,9 @@ export const SeasonalBloomsPage: React.FC<SeasonalBloomsPageProps> = ({ onNaviga
         {/* Ambient subtle glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#c8a45d]/10 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 flex flex-col items-center text-center">
           {/* Breadcrumbs */}
-          <nav className="flex items-center gap-2 text-xs text-slate-300 mb-6 flex-wrap">
+          <nav className="flex items-center justify-center gap-2 text-xs text-slate-300 mb-6 flex-wrap">
             <button 
               onClick={() => onNavigate('home')} 
               className="hover:text-[#c8a45d] transition-colors flex items-center gap-1 cursor-pointer"
@@ -31,7 +31,7 @@ export const SeasonalBloomsPage: React.FC<SeasonalBloomsPageProps> = ({ onNaviga
             <span className="text-white font-semibold">Seasonal Blooms & Florist Conditioning</span>
           </nav>
 
-          <div className="max-w-3xl">
+          <div className="max-w-3xl mx-auto flex flex-col items-center">
             <div className="inline-flex items-center gap-2 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#01115b] bg-gradient-to-r from-[#c8a45d] to-[#e4cc92] rounded-full mb-4">
               <Calendar className="w-3.5 h-3.5 text-[#01115b]" />
               <span>British & European Harvest Guide</span>
@@ -44,9 +44,9 @@ export const SeasonalBloomsPage: React.FC<SeasonalBloomsPageProps> = ({ onNaviga
             </p>
 
             {/* Quick highlights */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8 pt-6 border-t border-white/10 text-xs">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8 pt-6 border-t border-white/10 text-xs w-full text-left">
               <div className="flex items-center gap-2.5 text-slate-200">
-                <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-[#c8a45d]">
+                <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-[#c8a45d] flex-shrink-0">
                   <Leaf className="w-4 h-4" />
                 </div>
                 <div>
@@ -55,7 +55,7 @@ export const SeasonalBloomsPage: React.FC<SeasonalBloomsPageProps> = ({ onNaviga
                 </div>
               </div>
               <div className="flex items-center gap-2.5 text-slate-200">
-                <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-[#c8a45d]">
+                <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-[#c8a45d] flex-shrink-0">
                   <Droplets className="w-4 h-4" />
                 </div>
                 <div>
@@ -64,7 +64,7 @@ export const SeasonalBloomsPage: React.FC<SeasonalBloomsPageProps> = ({ onNaviga
                 </div>
               </div>
               <div className="flex items-center gap-2.5 text-slate-200">
-                <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-[#c8a45d]">
+                <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-[#c8a45d] flex-shrink-0">
                   <Sun className="w-4 h-4" />
                 </div>
                 <div>

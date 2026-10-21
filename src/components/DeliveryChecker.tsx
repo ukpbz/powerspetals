@@ -84,24 +84,9 @@ export const DeliveryChecker: React.FC = () => {
   };
 
   return (
-    <section id="delivery" className="py-20 bg-[#faf9f5] border-b border-slate-200">
+    <section id="delivery" className="py-16 bg-[#faf9f5] border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#01115b] bg-[#c8a45d]/15 rounded-full mb-3">
-            <MapPin className="w-3.5 h-3.5 text-[#c8a45d]" />
-            Exclusive Delivery Zones
-          </div>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-light text-[#01115b]">
-            Dedicated Postcode Coverage: <br />
-            <span className="italic font-normal text-[#9b7b32]">W4 · W5 · W6 · W12</span>
-          </h2>
-          <p className="mt-3 text-base text-slate-600">
-            To guarantee absolute freshness and pristine presentation, our signature hand deliveries and Bespoke Flower Delivery van are exclusively dedicated to West London postcodes W4, W5, W6, and W12.
-          </p>
-        </div>
-
         {/* Postcode Search Box */}
         <div className="max-w-xl mx-auto mb-14">
           <form onSubmit={checkPostcode} className="p-2 rounded-2xl bg-white border border-[#c8a45d]/40 shadow-lg flex items-center gap-2">
