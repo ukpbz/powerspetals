@@ -40,7 +40,7 @@ export const ConnectStudioPage: React.FC<ConnectStudioPageProps> = ({ onNavigate
               Connect With Our <span className="italic font-normal text-[#dfc282]">Floristry Studio</span>
             </h1>
             <p className="mt-4 text-base sm:text-lg text-slate-300 font-light leading-relaxed">
-              We welcome private bridal consultations, solemn and heartfelt sympathy commissions, corporate tablescapes, and Piaggio mobile flower van event reservations. Reach Helen and our artisanal florists directly.
+              We welcome private bridal consultations, solemn and heartfelt sympathy commissions, corporate tablescapes, and Bespoke Flower Delivery van event reservations. Reach Helen and our artisanal florists directly.
             </p>
 
             {/* Quick contact direct access pills */}

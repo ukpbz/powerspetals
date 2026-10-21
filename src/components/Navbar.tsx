@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Phone, Mail, User, Menu, X, Sparkles, MapPin, ChevronDown, Calendar, MessageSquare, ArrowRight } from 'lucide-react';
+import { Phone, Mail, User, Menu, X, Sparkles, MapPin, ChevronDown, Calendar, MessageSquare, ArrowRight, Layers, Calculator } from 'lucide-react';
 import { BUSINESS_INFO, ORIGINAL_ASSETS } from '../data/floralData';
 
-export type PageId = 'home' | 'design-vision' | 'seasonal-blooms' | 'connect-studio';
+export type PageId = 'home' | 'tailored-services' | 'design-vision' | 'seasonal-blooms' | 'connect-studio';
 
 interface NavbarProps {
   currentPage: PageId;
@@ -31,7 +31,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const isServicesActive = currentPage === 'design-vision' || currentPage === 'seasonal-blooms' || currentPage === 'connect-studio';
+  const isServicesActive = currentPage === 'tailored-services' || currentPage === 'design-vision' || currentPage === 'seasonal-blooms' || currentPage === 'connect-studio';
 
   return (
     <header className="sticky top-0 z-40 w-full bg-[#01115b]/95 backdrop-blur-md border-b border-[#c8a45d]/20 text-white shadow-lg transition-all duration-300">
@@ -121,13 +121,36 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             {/* Dropdown Menu Overlay */}
             {servicesMenuOpen && (
-              <div className="absolute top-full left-0 w-84 bg-[#000a2e]/98 backdrop-blur-xl border border-[#c8a45d]/40 rounded-2xl shadow-2xl py-3 px-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
+              <div className="absolute top-full left-0 w-92 bg-[#000a2e]/98 backdrop-blur-xl border border-[#c8a45d]/40 rounded-2xl shadow-2xl py-3 px-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
                 <div className="px-3 py-1.5 text-[10px] uppercase font-bold tracking-widest text-[#c8a45d] border-b border-white/10 mb-1 flex items-center justify-between">
                   <span>Services & Studio Pages</span>
                   <span className="text-slate-400 font-normal">Chiswick W4</span>
                 </div>
 
-                {/* 1. Design Your Floral Vision */}
+                {/* 1. Tailored Floral Services Across West London */}
+                <button
+                  onClick={() => {
+                    setServicesMenuOpen(false);
+                    onNavigate('tailored-services');
+                  }}
+                  className={`w-full text-left px-3 py-2.5 rounded-xl hover:bg-white/10 transition-colors flex items-start gap-3 group cursor-pointer ${
+                    currentPage === 'tailored-services' ? 'bg-white/10 border-l-2 border-[#c8a45d]' : ''
+                  }`}
+                >
+                  <div className="w-8 h-8 rounded-lg bg-[#c8a45d]/20 text-[#c8a45d] flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <Layers className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-semibold text-white group-hover:text-[#c8a45d] transition-colors flex items-center gap-1.5">
+                      <span>Tailored Floral Services Across West London</span>
+                    </div>
+                    <div className="text-xs text-slate-300 font-light mt-0.5">
+                      Weddings, Sympathy, Dining & Delivery Van (4 Core Offerings)
+                    </div>
+                  </div>
+                </button>
+
+                {/* 2. Design Your Floral Vision */}
                 <button
                   onClick={() => {
                     setServicesMenuOpen(false);
@@ -138,7 +161,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   }`}
                 >
                   <div className="w-8 h-8 rounded-lg bg-[#c8a45d]/20 text-[#c8a45d] flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                    <Sparkles className="w-4 h-4" />
+                    <Calculator className="w-4 h-4" />
                   </div>
                   <div>
                     <div className="text-sm font-semibold text-white group-hover:text-[#c8a45d] transition-colors flex items-center gap-1.5">
@@ -146,12 +169,12 @@ export const Navbar: React.FC<NavbarProps> = ({
                       <span className="text-[9px] uppercase font-bold tracking-wider px-1.5 py-0.5 bg-[#c8a45d] text-[#01115b] rounded">Customizer</span>
                     </div>
                     <div className="text-xs text-slate-300 font-light mt-0.5">
-                      Interactive arrangement estimator & stem palette selector
+                      Interactive arrangement customizer & live stem estimator
                     </div>
                   </div>
                 </button>
 
-                {/* 2. Seasonal Blooms & Florist Conditioning */}
+                {/* 3. Seasonal Blooms & Florist Conditioning */}
                 <button
                   onClick={() => {
                     setServicesMenuOpen(false);
@@ -174,7 +197,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   </div>
                 </button>
 
-                {/* 3. Connect With Our Floristry Studio */}
+                {/* 4. Connect With Our Floristry Studio */}
                 <button
                   onClick={() => {
                     setServicesMenuOpen(false);
@@ -196,20 +219,6 @@ export const Navbar: React.FC<NavbarProps> = ({
                     </div>
                   </div>
                 </button>
-
-                {/* Quick Link to Home Bespoke Services Section */}
-                <div className="border-t border-white/10 mt-1.5 pt-1.5 px-1">
-                  <button
-                    onClick={() => {
-                      setServicesMenuOpen(false);
-                      onNavigate('home', 'services');
-                    }}
-                    className="w-full text-left px-2.5 py-1.5 rounded-lg hover:bg-white/5 transition-colors text-xs text-[#c8a45d] hover:text-white flex items-center justify-between cursor-pointer"
-                  >
-                    <span>Overview: Weddings, Sympathy & Events</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
-                </div>
               </div>
             )}
           </div>
@@ -276,7 +285,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <span className="flex items-center gap-2">
                   <span className={isServicesActive ? 'text-[#c8a45d]' : ''}>Services</span>
                   <span className="text-[10px] font-bold uppercase tracking-wider bg-[#c8a45d]/20 text-[#c8a45d] px-2 py-0.5 rounded">
-                    Pages
+                    4 Pages
                   </span>
                 </span>
                 <ChevronDown className={`w-4 h-4 transition-transform ${mobileServicesExpanded ? 'rotate-180 text-[#c8a45d]' : 'text-slate-400'}`} />
@@ -287,13 +296,26 @@ export const Navbar: React.FC<NavbarProps> = ({
                   <button
                     onClick={() => {
                       setMobileMenuOpen(false);
+                      onNavigate('tailored-services');
+                    }}
+                    className={`w-full text-left py-2 px-3 text-sm font-medium rounded-lg flex items-center gap-2.5 cursor-pointer ${
+                      currentPage === 'tailored-services' ? 'bg-[#c8a45d]/20 text-[#c8a45d]' : 'text-slate-200 hover:text-[#c8a45d]'
+                    }`}
+                  >
+                    <Layers className="w-4 h-4 text-[#c8a45d]" />
+                    <span>Tailored Floral Services Across West London</span>
+                  </button>
+
+                  <button
+                    onClick={() => {
+                      setMobileMenuOpen(false);
                       onNavigate('design-vision');
                     }}
                     className={`w-full text-left py-2 px-3 text-sm font-medium rounded-lg flex items-center gap-2.5 cursor-pointer ${
                       currentPage === 'design-vision' ? 'bg-[#c8a45d]/20 text-[#c8a45d]' : 'text-[#e8c682] hover:text-white'
                     }`}
                   >
-                    <Sparkles className="w-4 h-4 text-[#c8a45d]" />
+                    <Calculator className="w-4 h-4 text-[#c8a45d]" />
                     <span>Design Your Floral Vision</span>
                   </button>
 
@@ -321,17 +343,6 @@ export const Navbar: React.FC<NavbarProps> = ({
                   >
                     <MessageSquare className="w-4 h-4 text-[#c8a45d]" />
                     <span>Connect With Our Floristry Studio</span>
-                  </button>
-
-                  <button
-                    onClick={() => {
-                      setMobileMenuOpen(false);
-                      onNavigate('home', 'services');
-                    }}
-                    className="w-full text-left py-1.5 px-3 text-xs text-[#c8a45d] hover:text-white flex items-center justify-between border-t border-white/10 cursor-pointer"
-                  >
-                    <span>All Bespoke Offerings</span>
-                    <ArrowRight className="w-3 h-3" />
                   </button>
                 </div>
               )}

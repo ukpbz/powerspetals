@@ -10,7 +10,7 @@ export const BUSINESS_INFO = {
   studioAddress: "Grove Park Studios, 188 Sutton Court Road, Chiswick, London W4 3HR",
   areasServed: ["West London"],
   hours: "Monday – Saturday: 8:00 AM – 6:30 PM (Consultations by Appointment)",
-  vanName: "Our Custom Piaggio Floral Van",
+  vanName: "Our Custom Bespoke Flower Delivery van",
 };
 
 export const ORIGINAL_ASSETS = {
@@ -69,10 +69,10 @@ export const SERVICES: ServiceOffering[] = [
     tag: "West London"
   },
   {
-    id: "piaggio-delivery",
-    title: "The Iconic Piaggio Delivery & Pop-Up",
+    id: "bespoke-van-delivery",
+    title: "The Iconic Bespoke Flower Delivery Van & Pop-Up",
     subtitle: "Our beloved custom 3-wheeled mobile flower truck",
-    description: "Instantly recognisable across Chiswick and West London, our custom dark blue Piaggio is equipped for temperature-controlled deliveries and luxury experiential pop-ups for outdoor weddings.",
+    description: "Instantly recognisable across Chiswick and West London, our custom dark blue Bespoke Flower Delivery van is equipped for temperature-controlled deliveries and luxury experiential pop-ups for outdoor weddings.",
     image: "/images/piaggio-truck.jpg",
     features: [
       "Hand-delivered presentation bouquets in Chiswick & West London",
@@ -101,13 +101,13 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   },
   {
     id: "port-2",
-    title: "The Famous Piaggio Mobile Florist Van",
+    title: "The Famous Bespoke Flower Delivery Van",
     category: "heritage",
     categoryLabel: "Our Heritage Van",
     image: "/images/piaggio-truck.jpg",
     isOriginalAsset: true,
     badge: "Original Studio Van",
-    description: "Our iconic deep navy Piaggio commercial 3-wheeler, adorned with our hand-painted watering can emblem and gold studio contact typography. Stationed outside Grove Park Studios Chiswick.",
+    description: "Our iconic deep navy Bespoke Flower Delivery van, adorned with our hand-painted watering can emblem and gold studio contact typography. Stationed outside Grove Park Studios Chiswick.",
     blooms: ["Hanging Petunias", "Seasonal Fresh Market Stems", "English Garden Foliage"],
     occasion: "Florist Delivery & Experiential Wedding Hire",
     location: "Chiswick W4 & West London Routes"
@@ -186,7 +186,7 @@ export const DEMO_CLIENT_ORDERS: ClientOrder[] = [
     palette: "Champagne, Ivory & Sage Green",
     keyFlowers: ["David Austin Patience Roses", "White Hydrangeas", "Sweet Peas", "Silver Dollar Eucalyptus"],
     notes: "Ceremony at 1:30 PM. Arch installation starting at 9:00 AM. Bridal party bouquets hand-delivered to the Bridal Suite in water vessels.",
-    assignedVehicle: "Piaggio Van (Floral Van #1)",
+    assignedVehicle: "Bespoke Flower Delivery van (Floral Van #1)",
     leadFlorist: "Helen Power",
     totalEstimate: "£2,450.00 (Deposit Paid £800)"
   },
@@ -214,7 +214,7 @@ export const DEMO_CLIENT_ORDERS: ClientOrder[] = [
     palette: "Autumnal Burgundy, Burnt Copper & Spiced Gold",
     keyFlowers: ["Chocolate Cosmos", "Copper Dahlias", "Rosehips", "Antike Roses"],
     notes: "12 centerpiece low compotes plus grand entrance urn. Candle glassware provided by Power's Petals studio.",
-    assignedVehicle: "Piaggio Van (Event Display)",
+    assignedVehicle: "Bespoke Flower Delivery van (Event Display)",
     leadFlorist: "Helen Power",
     totalEstimate: "£1,680.00"
   }

@@ -36,9 +36,9 @@ export const ClientLogonModal: React.FC<ClientLogonModalProps> = ({ isOpen, onCl
     venueOrAddress: '',
     palette: 'English Romantic Garden & Sage',
     keyFlowers: 'Garden Roses, White Hydrangeas, Sweet Peas, Eucalyptus',
-    notes: 'Bespoke delivery via Piaggio Van.',
+    notes: 'Bespoke delivery via Bespoke Flower Delivery van.',
     totalEstimate: '£1,500.00',
-    assignedVehicle: 'Piaggio Van (Floral Van #1)',
+    assignedVehicle: 'Bespoke Flower Delivery van (Floral Van #1)',
     leadFlorist: 'Helen Power'
   });
 
@@ -83,8 +83,8 @@ export const ClientLogonModal: React.FC<ClientLogonModalProps> = ({ isOpen, onCl
         status: 'Stems Sourced',
         palette: 'English Romantic Garden & Sage Foliage',
         keyFlowers: ['Garden Roses', 'White Sweet Peas', 'Eucalyptus', 'Hydrangeas'],
-        notes: 'Handcrafted seasonal selection conditioned in Chiswick studio. Deliver via Piaggio Van.',
-        assignedVehicle: 'Piaggio Van (Floral Van #1)',
+        notes: 'Handcrafted seasonal selection conditioned in Chiswick studio. Deliver via Bespoke Flower Delivery van.',
+        assignedVehicle: 'Bespoke Flower Delivery van (Floral Van #1)',
         leadFlorist: 'Helen Power',
         totalEstimate: '£1,250.00'
       };
@@ -140,9 +140,9 @@ export const ClientLogonModal: React.FC<ClientLogonModalProps> = ({ isOpen, onCl
       venueOrAddress: '',
       palette: 'English Romantic Garden & Sage',
       keyFlowers: 'Garden Roses, White Hydrangeas, Sweet Peas, Eucalyptus',
-      notes: 'Bespoke delivery via Piaggio Van.',
+      notes: 'Bespoke delivery via Bespoke Flower Delivery van.',
       totalEstimate: '£1,500.00',
-      assignedVehicle: 'Piaggio Van (Floral Van #1)',
+      assignedVehicle: 'Bespoke Flower Delivery van (Floral Van #1)',
       leadFlorist: 'Helen Power'
     });
   };
@@ -184,7 +184,7 @@ export const ClientLogonModal: React.FC<ClientLogonModalProps> = ({ isOpen, onCl
               </h3>
               <p className="text-xs text-slate-300">
                 {activeTab === 'admin_dashboard' 
-                  ? "Manage floral production schedules, dispatch the Piaggio van & monitor bookings"
+                  ? "Manage floral production schedules, dispatch the Bespoke Flower Delivery van & monitor bookings"
                   : "Track bespoke floral arrangements, stem recipes & delivery schedules"
                 }
               </p>
@@ -394,8 +394,8 @@ export const ClientLogonModal: React.FC<ClientLogonModalProps> = ({ isOpen, onCl
                   {[
                     { label: 'Consultation', done: true },
                     { label: 'Stems Sourced', done: currentOrder.status !== 'Design Confirmed' },
-                    { label: 'Studio Production', done: currentOrder.status === 'In Studio Production' || currentOrder.status === 'Out for Delivery (Piaggio Van)' || currentOrder.status === 'Delivered' },
-                    { label: 'Van Dispatch', done: currentOrder.status === 'Out for Delivery (Piaggio Van)' || currentOrder.status === 'Delivered' },
+                    { label: 'Studio Production', done: currentOrder.status === 'In Studio Production' || currentOrder.status === 'Out for Delivery (Bespoke Flower Delivery van)' || currentOrder.status === 'Delivered' },
+                    { label: 'Van Dispatch', done: currentOrder.status === 'Out for Delivery (Bespoke Flower Delivery van)' || currentOrder.status === 'Delivered' },
                   ].map((step, idx) => (
                     <div 
                       key={idx} 
@@ -532,7 +532,7 @@ export const ClientLogonModal: React.FC<ClientLogonModalProps> = ({ isOpen, onCl
                     </span>
                   </div>
                   <h4 className="font-serif text-2xl font-bold text-[#01115b] mt-0.5">
-                    Chiswick Studio & Piaggio Dispatch Control
+                    Chiswick Studio & Delivery Van Dispatch Control
                   </h4>
                   <p className="text-xs text-slate-500">
                     Logged in as <strong>Helen Power (Founder & Lead Florist)</strong> · Grove Park Studios
@@ -689,7 +689,7 @@ export const ClientLogonModal: React.FC<ClientLogonModalProps> = ({ isOpen, onCl
                             <option value="Design Confirmed">Design Confirmed</option>
                             <option value="Stems Sourced">Stems Sourced</option>
                             <option value="In Studio Production">In Studio Production</option>
-                            <option value="Out for Delivery (Piaggio Van)">Out for Delivery (Piaggio Van)</option>
+                            <option value="Out for Delivery (Bespoke Flower Delivery van)">Out for Delivery (Bespoke Flower Delivery van)</option>
                             <option value="Delivered">Delivered</option>
                           </select>
                         </div>

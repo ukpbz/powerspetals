@@ -96,7 +96,7 @@ export const BespokeEstimator: React.FC<BespokeEstimatorProps> = ({
 
     if (subtotal === 0) subtotal = 120;
 
-    // Piaggio van delivery addition
+    // Bespoke Flower Delivery van delivery addition
     const deliveryFee = apeVanRequested ? 35 : 15;
     const minEstimate = Math.round(subtotal * 0.9 + deliveryFee);
     const maxEstimate = Math.round(subtotal * 1.25 + deliveryFee);
@@ -269,7 +269,7 @@ export const BespokeEstimator: React.FC<BespokeEstimatorProps> = ({
               </div>
             </div>
 
-            {/* Step 4: Delivery Location & Piaggio Van Option */}
+            {/* Step 4: Delivery Location & Bespoke Flower Delivery Van Option */}
             <div className="pt-2">
               <label className="block text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">
                 4. Delivery Location & Signature Vehicle
@@ -298,7 +298,7 @@ export const BespokeEstimator: React.FC<BespokeEstimatorProps> = ({
                 ))}
               </div>
 
-              {/* Piaggio Van Option Toggle */}
+              {/* Bespoke Flower Delivery Van Option Toggle */}
               <div 
                 onClick={() => setApeVanRequested(!apeVanRequested)}
                 className={`p-3.5 rounded-xl border flex items-center justify-between cursor-pointer transition-all ${
@@ -311,7 +311,7 @@ export const BespokeEstimator: React.FC<BespokeEstimatorProps> = ({
                   </div>
                   <div>
                     <div className="text-xs font-bold text-[#01115b]">
-                      Dispatch in our Signature Piaggio Van (+£35)
+                      Dispatch in our Bespoke Flower Delivery Van (+£35)
                     </div>
                     <div className="text-[11px] text-slate-500">
                       Iconic mobile florist vehicle delivery with hand-presentation & photo opportunity
@@ -371,7 +371,7 @@ export const BespokeEstimator: React.FC<BespokeEstimatorProps> = ({
                 <div className="flex justify-between py-1 border-b border-white/5">
                   <span>Delivery Method:</span>
                   <span className="font-medium text-white">
-                    {apeVanRequested ? 'Signature Piaggio Van' : 'Standard Delivery'}
+                    {apeVanRequested ? 'Bespoke Flower Delivery van' : 'Standard Delivery'}
                   </span>
                 </div>
               </div>

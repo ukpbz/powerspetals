@@ -46,7 +46,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation, onExploreService
           </h1>
 
           <p className="text-base sm:text-lg text-slate-300 font-light leading-relaxed max-w-2xl mx-auto">
-            Handcrafted luxury bridal floristry, solemn and heartfelt sympathy tributes, and immersive venue styling. Delivered across West London in our signature custom Piaggio mobile flower van.
+            Handcrafted luxury bridal floristry, solemn and heartfelt sympathy tributes, and immersive venue styling. Delivered across West London in our signature custom Bespoke Flower Delivery van.
           </p>
 
           {/* Action buttons */}
@@ -63,7 +63,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation, onExploreService
               onClick={onExploreServices}
               className="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-medium text-white bg-white/10 hover:bg-white/15 border border-white/20 rounded-lg backdrop-blur-sm transition-all cursor-pointer"
             >
-              <span>Explore Bespoke Services</span>
+              <span>Explore Tailored Services</span>
               <ArrowRight className="w-4 h-4 text-[#c8a45d]" />
             </button>
 
@@ -89,8 +89,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation, onExploreService
             </div>
 
             <div className="p-3 rounded-lg bg-white/5 border border-white/5 backdrop-blur-sm">
-              <div className="font-serif text-2xl font-bold text-[#c8a45d]">Piaggio Van</div>
-              <div className="text-xs text-slate-300 mt-0.5">Iconic Mobile Delivery Van</div>
+              <div className="font-serif text-base sm:text-lg font-bold text-[#c8a45d] leading-tight">Delivery Van</div>
+              <div className="text-xs text-slate-300 mt-0.5">Bespoke Flower Delivery van</div>
             </div>
 
             <div 

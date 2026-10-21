@@ -29,7 +29,7 @@ export interface ClientOrder {
   eventType: 'Wedding' | 'Sympathy Tribute' | 'Private Event' | 'Bouquet Delivery';
   date: string;
   venueOrAddress: string;
-  status: 'Design Confirmed' | 'Stems Sourced' | 'In Studio Production' | 'Out for Delivery (Piaggio Van)' | 'Delivered';
+  status: 'Design Confirmed' | 'Stems Sourced' | 'In Studio Production' | 'Out for Delivery (Bespoke Flower Delivery van)' | 'Delivered';
   palette: string;
   keyFlowers: string[];
   notes: string;

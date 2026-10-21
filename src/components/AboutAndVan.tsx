@@ -21,14 +21,14 @@ export const AboutAndVan: React.FC<AboutAndVanProps> = ({ onOpenConsultation, on
             <div className="relative rounded-2xl overflow-hidden border-2 border-[#01115b]/20 shadow-2xl bg-[#01115b] group">
               <img
                 src={ORIGINAL_ASSETS.piaggioTruck}
-                alt="Power's Petals Iconic Piaggio Flower Truck in Chiswick"
+                alt="Power's Petals Iconic Bespoke Flower Delivery Van in Chiswick"
                 className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute top-4 left-4 bg-[#01115b] text-[#c8a45d] text-xs font-bold uppercase tracking-wider px-3 py-1 rounded shadow">
                 Chiswick W4 Station & Studio
               </div>
               <div className="absolute bottom-4 inset-x-4 p-3 rounded-xl bg-[#01115b]/90 backdrop-blur-sm border border-[#c8a45d]/30 text-white text-xs">
-                <div className="font-serif font-bold text-sm text-[#e4cc92]">The Piaggio 50 Floral Van</div>
+                <div className="font-serif font-bold text-sm text-[#e4cc92]">The Bespoke Flower Delivery Van</div>
                 <div className="text-slate-300 text-[11px] mt-0.5">
                   Hand-painted turquoise watering can emblem & climate-regulated floral bed
                 </div>
@@ -53,7 +53,7 @@ export const AboutAndVan: React.FC<AboutAndVanProps> = ({ onOpenConsultation, on
           <div className="lg:col-span-7 space-y-6">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#01115b] bg-[#c8a45d]/15 rounded-full">
               <Truck className="w-3.5 h-3.5 text-[#c8a45d]" />
-              Our Iconic Delivery Van & Studio Story
+              Our Iconic Bespoke Flower Delivery Van & Studio Story
             </div>
 
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-light text-[#01115b] leading-tight">
@@ -66,7 +66,7 @@ export const AboutAndVan: React.FC<AboutAndVanProps> = ({ onOpenConsultation, on
             </p>
 
             <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
-              Our signature midnight blue <strong>Piaggio truck</strong> quickly became a cherished local landmark. Originally spotted bringing vibrant blooms to Chiswick Station, it now hand-delivers bespoke floral commissions across all of West London, bringing bridal arrangements in pristine condition, creating unforgettable event photo moments, and honoring heartfelt farewell tributes with utmost reverence.
+              Our signature midnight blue <strong>Bespoke Flower Delivery van</strong> quickly became a cherished local landmark. Originally spotted bringing vibrant blooms to Chiswick Station, it now hand-delivers bespoke floral commissions across all of West London, bringing bridal arrangements in pristine condition, creating unforgettable event photo moments, and honoring heartfelt farewell tributes with utmost reverence.
             </p>
 
             {/* Core Values */}

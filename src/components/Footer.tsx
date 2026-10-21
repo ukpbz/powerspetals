@@ -4,7 +4,7 @@ import { BUSINESS_INFO, ORIGINAL_ASSETS } from '../data/floralData';
 
 interface FooterProps {
   onOpenLogon: () => void;
-  onNavigate: (page: 'home' | 'design-vision' | 'seasonal-blooms' | 'connect-studio', anchor?: string) => void;
+  onNavigate: (page: 'home' | 'tailored-services' | 'design-vision' | 'seasonal-blooms' | 'connect-studio', anchor?: string) => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({ 
@@ -70,8 +70,16 @@ export const Footer: React.FC<FooterProps> = ({
             <ul className="space-y-2.5">
               <li>
                 <button 
+                  onClick={() => onNavigate('tailored-services' as any)} 
+                  className="hover:text-[#c8a45d] transition-colors text-left cursor-pointer font-semibold text-[#e4cc92]"
+                >
+                  Tailored Floral Services
+                </button>
+              </li>
+              <li>
+                <button 
                   onClick={() => onNavigate('design-vision')} 
-                  className="hover:text-[#c8a45d] transition-colors text-left cursor-pointer flex items-center gap-1.5 text-[#e4cc92] font-semibold"
+                  className="hover:text-[#c8a45d] transition-colors text-left cursor-pointer flex items-center gap-1.5"
                 >
                   <Sparkles className="w-3.5 h-3.5 text-[#c8a45d]" />
                   <span>Design Your Floral Vision</span>
@@ -91,22 +99,6 @@ export const Footer: React.FC<FooterProps> = ({
                   className="hover:text-[#c8a45d] transition-colors text-left cursor-pointer"
                 >
                   Connect With Our Studio
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => onNavigate('home', 'services')} 
-                  className="hover:text-[#c8a45d] transition-colors text-left cursor-pointer"
-                >
-                  Luxury Weddings & Bridal
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => onNavigate('home', 'services')} 
-                  className="hover:text-[#c8a45d] transition-colors text-left cursor-pointer"
-                >
-                  Dignified Sympathy & Memorials
                 </button>
               </li>
             </ul>
@@ -159,7 +151,7 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <button onClick={() => onNavigate('home', 'about')} className="hover:text-[#c8a45d] transition-colors text-left cursor-pointer">
-                  The Piaggio Mobile Flower Van
+                  The Bespoke Flower Delivery Van
                 </button>
               </li>
               <li>
@@ -214,7 +206,7 @@ export const Footer: React.FC<FooterProps> = ({
           <div className="flex items-center gap-6">
             <span>Specialist Wedding & Funeral Floristry</span>
             <span>·</span>
-            <span>Piaggio Ape Van Hire</span>
+            <span>Bespoke Flower Delivery Van Hire</span>
             <span>·</span>
             <span className="text-[#c8a45d]">British Sustainable Blooms</span>
           </div>

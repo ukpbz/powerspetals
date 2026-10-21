@@ -30,7 +30,7 @@ const EXCLUSIVE_AREAS: AreaInfo[] = [
     name: 'Hammersmith & Ravenscourt',
     landmarks: ['Hammersmith Bridge', 'Ravenscourt Park', 'Stamford Brook', 'King Street', 'Brook Green'],
     sameDay: true,
-    leadTime: 'Direct corridor delivery via Piaggio van'
+    leadTime: 'Direct corridor delivery via Bespoke Flower Delivery van'
   },
   {
     code: 'W12',
@@ -72,7 +72,7 @@ export const DeliveryChecker: React.FC = () => {
         found: true,
         area: matchedArea,
         entered: clean,
-        note: `Direct delivery confirmed! Hand-delivered from our Grove Park Studios in Chiswick via our signature Piaggio mobile flower van.`
+        note: `Direct delivery confirmed! Hand-delivered from our Grove Park Studios in Chiswick via our signature Bespoke Flower Delivery van.`
       });
     } else {
       setResult({
@@ -98,7 +98,7 @@ export const DeliveryChecker: React.FC = () => {
             <span className="italic font-normal text-[#9b7b32]">W4 · W5 · W6 · W12</span>
           </h2>
           <p className="mt-3 text-base text-slate-600">
-            To guarantee absolute freshness and pristine presentation, our signature hand deliveries and Piaggio van are exclusively dedicated to West London postcodes W4, W5, W6, and W12.
+            To guarantee absolute freshness and pristine presentation, our signature hand deliveries and Bespoke Flower Delivery van are exclusively dedicated to West London postcodes W4, W5, W6, and W12.
           </p>
         </div>
 
@@ -123,31 +123,6 @@ export const DeliveryChecker: React.FC = () => {
               <span>Check Postcode</span>
             </button>
           </form>
-
-          {/* Quick Click Badges */}
-          <div className="mt-3 flex items-center justify-center gap-2 text-xs text-slate-500">
-            <span>Quick test:</span>
-            {['W4 3HR', 'W5 2BP', 'W6 9RU', 'W12 7TU'].map((pc) => (
-              <button
-                key={pc}
-                type="button"
-                onClick={() => {
-                  setPostcode(pc);
-                  // Trigger programmatic check
-                  const area = EXCLUSIVE_AREAS.find(a => pc.startsWith(a.code));
-                  setResult({
-                    found: true,
-                    area,
-                    entered: pc,
-                    note: `Direct delivery confirmed! Hand-delivered from our Grove Park Studios in Chiswick via our signature Piaggio mobile flower van.`
-                  });
-                }}
-                className="text-xs font-semibold text-[#01115b] hover:text-[#c8a45d] underline cursor-pointer"
-              >
-                {pc}
-              </button>
-            ))}
-          </div>
 
           {/* Result Card */}
           {result && (
@@ -178,7 +153,7 @@ export const DeliveryChecker: React.FC = () => {
                     <div className="pt-2 flex flex-wrap items-center gap-4 text-xs text-slate-500">
                       <span className="flex items-center gap-1 text-[#2d6a4f] font-semibold">
                         <Truck className="w-3.5 h-3.5" />
-                        Piaggio Van Delivery Available
+                        Bespoke Flower Delivery van Available
                       </span>
                       <span>·</span>
                       <span className="flex items-center gap-1">

@@ -6,11 +6,11 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar, PageId } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { ServicesSection } from './components/ServicesSection';
 import { AboutAndVan } from './components/AboutAndVan';
 import { DeliveryChecker } from './components/DeliveryChecker';
 import { Footer } from './components/Footer';
 import { ClientLogonModal } from './components/ClientLogonModal';
+import { TailoredServicesPage } from './pages/TailoredServicesPage';
 import { SeasonalBloomsPage } from './pages/SeasonalBloomsPage';
 import { ConnectStudioPage } from './pages/ConnectStudioPage';
 import { DesignVisionPage } from './pages/DesignVisionPage';
@@ -25,7 +25,10 @@ export default function App() {
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.toLowerCase();
-      if (hash.includes('seasonal-blooms') || hash.includes('seasonal')) {
+      if (hash.includes('tailored-services') || hash.includes('services')) {
+        setCurrentPage('tailored-services');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (hash.includes('seasonal-blooms') || hash.includes('seasonal')) {
         setCurrentPage('seasonal-blooms');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else if (hash.includes('connect-studio') || hash.includes('contact')) {
@@ -36,9 +39,9 @@ export default function App() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
         setCurrentPage('home');
-        // Handle home anchor jumps (e.g. #about, #services, #delivery)
+        // Handle home anchor jumps (e.g. #about, #delivery)
         const match = hash.match(/^#\/?([a-z0-9_-]+)/);
-        if (match && !['services', 'seasonal-blooms', 'connect-studio', 'design-vision'].includes(match[1])) {
+        if (match && !['services', 'tailored-services', 'seasonal-blooms', 'connect-studio', 'design-vision'].includes(match[1])) {
           setTimeout(() => {
             const el = document.getElementById(match[1]);
             if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -99,7 +102,7 @@ export default function App() {
         </div>
       )}
 
-      {/* Navigation with Services menu heading and subpages */}
+      {/* Navigation with Services menu heading and 4 subpages */}
       <Navbar 
         currentPage={currentPage}
         onNavigate={handleNavigate}
@@ -113,7 +116,7 @@ export default function App() {
             {/* Hero with Authentic Logo Banner & Royal Navy Backdrop */}
             <Hero 
               onOpenConsultation={() => handleNavigate('connect-studio')}
-              onExploreServices={() => handleNavigate('home', 'services')}
+              onExploreServices={() => handleNavigate('tailored-services')}
               onOpenLogon={() => setIsLogonOpen(true)}
             />
 
@@ -123,14 +126,16 @@ export default function App() {
               onOpenDesignVision={() => handleNavigate('design-vision')}
             />
 
-            {/* Bespoke Services */}
-            <ServicesSection 
-              onSelectService={(service) => handleSelectDesign(service)}
-            />
-
             {/* Interactive UK Postcode Delivery Checker (West London W4, W5, W6, W12) */}
             <DeliveryChecker />
           </>
+        )}
+
+        {currentPage === 'tailored-services' && (
+          <TailoredServicesPage 
+            onNavigate={handleNavigate}
+            onSelectService={handleSelectDesign}
+          />
         )}
 
         {currentPage === 'design-vision' && (

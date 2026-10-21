@@ -31,7 +31,7 @@ export const ContactSection: React.FC = () => {
             Connect With Our <span className="italic font-normal text-[#9b7b32]">Floristry Studio</span>
           </h2>
           <p className="mt-3 text-base text-slate-600">
-            Whether planning a wedding celebration, commissioning a memorial spray, or booking our iconic Piaggio mobile flower truck.
+            Whether planning a wedding celebration, commissioning a memorial spray, or booking our iconic Bespoke Flower Delivery van.
           </p>
         </div>
 
@@ -192,7 +192,7 @@ export const ContactSection: React.FC = () => {
                       <option>Wedding & Bridal Floristry</option>
                       <option>Sympathy & Funeral Tribute</option>
                       <option>Private Event / Gala Tablescapes</option>
-                      <option>Piaggio Flower Truck Hire</option>
+                      <option>Bespoke Flower Delivery Van Hire</option>
                       <option>Luxury Hand-Tied Presentation Bouquet</option>
                       <option>Weekly Business / Corporate Flowers</option>
                     </select>
